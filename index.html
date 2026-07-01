@@ -403,47 +403,93 @@
   .sizes-section {
     background: var(--cream);
     padding: 80px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
   }
 
-  .sizes-photo {
-    flex: 1 1 420px;
-    max-width: 480px;
+  .sizes-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 56px;
+  }
+
+  .sizes-intro .section-label { justify-content: center; }
+
+  .size-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .size-card {
+    background: #f4f4f2;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+
+  .size-card-photo {
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    margin-bottom: 24px;
   }
 
-  .sizes-photo img { display: block; width: 100%; height: auto; }
+  .size-card-photo img { display: block; width: 100%; height: 220px; object-fit: cover; }
 
-  .sizes-text { flex: 1 1 380px; max-width: 480px; }
-
-  .size-options { display: flex; flex-direction: column; gap: 20px; margin-top: 24px; }
-
-  .size-option {
-    background: #f4f4f2;
-    border-left: 3px solid var(--gold);
-    border-radius: 6px;
-    padding: 20px 24px;
-  }
-
-  .size-option h3 {
+  .size-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
+    font-size: 26px;
     color: var(--green-dark);
     margin-bottom: 6px;
   }
 
-  .size-option p {
-    font-size: 14px;
+  .size-card-tagline {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     color: var(--text-light);
-    line-height: 1.7;
-    font-weight: 300;
+    margin-bottom: 24px;
+    font-weight: 600;
   }
+
+  .size-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .size-stat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    padding: 14px 18px;
+    background: #fff;
+  }
+
+  .size-stat-icon { font-size: 20px; flex-shrink: 0; }
+
+  .size-stat strong { color: var(--green-dark); font-weight: 700; }
+  .size-stat span { font-size: 14px; color: var(--text-light); }
+
+  .size-card-btn {
+    display: block;
+    text-align: center;
+    background: var(--gold);
+    color: var(--green-dark);
+    padding: 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .size-card-btn:hover { background: var(--gold-light); }
 
   .services-cta {
     background: var(--green-dark);
@@ -998,19 +1044,34 @@
 </div>
 </div>
 <section class="sizes-section">
-<div class="sizes-photo"><img alt="858 Dumpsters roll-off dumpsters in 13 and 20 yard sizes" src="assets/dumpster-sizes.jpg"/></div>
-<div class="sizes-text">
+<div class="sizes-intro">
 <div class="section-label">Dumpster Sizes</div>
 <div class="section-title">Pick the size<br/>that fits your job.</div>
-<div class="size-options">
-<div class="size-option">
+</div>
+<div class="size-cards">
+<div class="size-card">
+<div class="size-card-photo"><img alt="858 Dumpsters 13 yard roll-off dumpster" src="assets/hero-dumpster.jpg"/></div>
 <h3>13 Yard Dumpster</h3>
-<p>Great for smaller cleanouts, garage or attic clear-outs, and minor renovation projects.</p>
+<p class="size-card-tagline">Great for smaller cleanouts &amp; renovations</p>
+<div class="size-stats">
+<div class="size-stat"><span class="size-stat-icon">💲</span><span><strong>Price Starts At</strong> $450</span></div>
+<div class="size-stat"><span class="size-stat-icon">📐</span><span><strong>Dimensions:</strong> 14'L x 7'W x 4'H</span></div>
+<div class="size-stat"><span class="size-stat-icon">⚖️</span><span><strong>Weight:</strong> 1 ton included</span></div>
+<div class="size-stat"><span class="size-stat-icon">📅</span><span><strong>Rental Days:</strong> Up to 5 days included</span></div>
 </div>
-<div class="size-option">
+<a class="size-card-btn" href="tel:8589974714">Book a 13-Yard Dumpster</a>
+</div>
+<div class="size-card">
+<div class="size-card-photo"><img alt="858 Dumpsters 20 yard roll-off dumpster" src="assets/dumpster-sizes.jpg"/></div>
 <h3>20 Yard Dumpster</h3>
-<p>Our most popular size — ideal for larger remodels, roofing jobs, and construction debris.</p>
+<p class="size-card-tagline">Our most popular size for remodels &amp; construction</p>
+<div class="size-stats">
+<div class="size-stat"><span class="size-stat-icon">💲</span><span><strong>Price Starts At</strong> $600</span></div>
+<div class="size-stat"><span class="size-stat-icon">📐</span><span><strong>Dimensions:</strong> 14'L x 7'W x 6'H</span></div>
+<div class="size-stat"><span class="size-stat-icon">⚖️</span><span><strong>Weight:</strong> 1 ton included</span></div>
+<div class="size-stat"><span class="size-stat-icon">📅</span><span><strong>Rental Days:</strong> Up to 5 days included</span></div>
 </div>
+<a class="size-card-btn" href="tel:8589974714">Book a 20-Yard Dumpster</a>
 </div>
 </div>
 </section>
