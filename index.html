@@ -218,8 +218,10 @@
     padding: 100px 40px;
     max-width: 100%;
     margin: 0;
-    background: var(--green-bg);
+    background: var(--green);
   }
+
+  .highlights .section-title { color: var(--cream); }
 
   .section-label {
     font-size: 11px;
@@ -245,17 +247,17 @@
   }
 
   .card {
-    background: #eaf2eb;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(201,168,76,0.3);
     border-radius: 8px;
     padding: 40px 32px;
-    box-shadow: 0 2px 16px rgba(74,107,80,0.08);
     border-top: 3px solid var(--gold);
     transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(74,107,80,0.12);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
   }
 
   .card-icon {
@@ -266,13 +268,13 @@
   .card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 20px;
-    color: var(--green-dark);
+    color: var(--cream);
     margin-bottom: 12px;
   }
 
   .card p {
     font-size: 14px;
-    color: var(--text-light);
+    color: rgba(240,234,214,0.85);
     line-height: 1.7;
     font-weight: 300;
   }
@@ -505,6 +507,8 @@
     transition: color 0.2s;
   }
 
+  .contact-email { font-size: clamp(18px, 2.6vw, 28px); }
+
   .big-phone:hover { color: var(--gold); }
 
   .contact-card .sub {
@@ -658,6 +662,12 @@
       line-height: 1.15 !important;
     }
 
+    .contact-email {
+      font-size: clamp(13px, 4.8vw, 20px) !important;
+      white-space: nowrap !important;
+      overflow-wrap: normal !important;
+    }
+
     footer { padding: 26px 16px !important; }
     footer .footer-logo img { max-height: 58px !important; max-width: 90vw !important; }
     footer p { font-size: 11px !important; line-height: 1.5 !important; }
@@ -668,6 +678,7 @@
     .contact-page h1 { font-size: 34px !important; }
     .contact-card { padding-left: 10px !important; padding-right: 10px !important; }
     .big-phone { font-size: 29px !important; }
+    .contact-email { font-size: clamp(11px, 4.2vw, 16px) !important; }
   }
 
 
@@ -797,6 +808,16 @@
     background-position: center center !important;
   }
 
+  .hero h1 {
+    font-size: clamp(32px, 9vw, 44px) !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero p {
+    font-size: 15px !important;
+    margin-bottom: 22px !important;
+  }
+
   .trust-bar {
     width: 100% !important;
     margin: 0 !important;
@@ -885,7 +906,7 @@
 </div>
 </section>
 <div class="trust-bar">
-<div class="trust-item"><span class="icon">⚡</span> Same Day &amp; Next Day Delivery</div>
+<div class="trust-item"><span class="icon">⚡</span> Fast &amp; Flexible Delivery</div>
 <div class="trust-item"><span class="icon">✓</span> Free Quotes</div>
 <div class="trust-item"><span class="icon">★</span> Locally Owned</div>
 <div class="trust-item"><span class="icon">♻</span> Eco-Friendly Disposal</div>
@@ -915,7 +936,7 @@
 <div class="about-text">
 <div class="section-label">About Us</div>
 <div class="section-title">Local, reliable,<br/>and ready to help.</div>
-<p>858 Dumpsters is your local dumpster rental service built on hard work and honest pricing. No hidden fees, no hassle — just tell us what size you need and we'll deliver it right to your door.</p>
+<p>858 Dumpsters is your local dumpster rental service built on hard work and honest pricing. No hidden fees, no hassle — just tell us what size you need and we'll deliver it right to your driveway.</p>
 </div>
 <div class="about-badge">
 <div class="name">Locally Owned<br/>&amp; Operated</div>
@@ -944,7 +965,7 @@
 </div>
 <div class="service-card">
 <div class="icon">🚛</div>
-<h3>Same-Day &amp; Next-Day Delivery</h3>
+<h3>Fast &amp; Flexible Delivery</h3>
 <p>Need a dumpster fast? We offer prompt delivery and pickup so your project stays on schedule.</p>
 </div>
 <div class="service-card">
@@ -1007,7 +1028,7 @@
 <div class="sub">Call or Text</div>
 <a class="big-phone" href="tel:8589974714">(858) 997-4714</a>
 <div class="sub" style="margin-top:24px;">Email Us</div>
-<a class="big-phone" style="font-size:clamp(20px,3.2vw,28px); white-space:normal; word-break:break-word;" href="mailto:contact@858dumpsters.com">contact@858dumpsters.com</a>
+<a class="big-phone contact-email" href="mailto:contact@858dumpsters.com">contact@858dumpsters.com</a>
 </div>
 </div>
 </div>
