@@ -129,7 +129,20 @@
     overflow: hidden;
   }
 
-  .hero-content { position: relative; z-index: 1; max-width: 100%; }
+  .hero-content { max-width: 100%; }
+
+  .hero-call-btn {
+    position: absolute;
+    top: 44%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    padding: 8px 16px !important;
+    font-size: 11px !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-call-btn .phone-icon { font-size: 12px; }
 
   .hero-eyebrow {
     font-size: 11px;
@@ -857,6 +870,11 @@
     margin-bottom: 22px !important;
   }
 
+  .hero-call-btn {
+    top: 45% !important;
+    left: 78% !important;
+  }
+
   .trust-bar {
     width: 100% !important;
     margin: 0 !important;
@@ -938,14 +956,10 @@
 <!-- ══ HOME ══ -->
 <div class="page active" id="page-home">
 <section class="hero">
-<div class="hero-content">
-<p>We deliver dumpsters to your driveway!</p>
-<a class="hero-btn" href="tel:8589974714" style="margin-left:90px;padding:13px 28px;font-size:13px;">
+<a class="hero-btn hero-call-btn" href="tel:8589974714">
 <span class="phone-icon">📞</span>
         (858) 997-4714
       </a>
-
-</div>
 </section>
 <section class="highlights">
 <div class="section-label">What We Do</div>
