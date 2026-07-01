@@ -49,7 +49,7 @@
 
   /* ── NAV ── */
   nav {
-    background: var(--green-dark);
+    background: #6d6c4b;
     padding: 0 40px;
     display: flex;
     align-items: center;
@@ -559,7 +559,7 @@
 
   /* ── FOOTER ── */
   footer {
-    background: #2c3e2e;
+    background: #6d6c4b;
     padding: 32px 40px;
     text-align: center;
   }
@@ -751,7 +751,7 @@
     align-items: center !important;
     justify-content: center !important;
     gap: 10px !important;
-    background: #4a6654 !important;
+    background: #6d6c4b !important;
     box-shadow: 0 2px 12px rgba(0,0,0,0.15) !important;
   }
 
@@ -859,8 +859,12 @@
 <style id="final-desktop-and-mobile-polish">
 /* Final polish: keep mobile one-nav layout, and prevent heading wrap */
 @media (max-width: 700px) {
-  body, nav, footer, .trust-bar {
+  body, .trust-bar {
     background-color: #4a6654 !important;
+  }
+
+  nav, footer {
+    background-color: #6d6c4b !important;
   }
 
   .services-cta h2 {
@@ -884,7 +888,7 @@
 </head>
 <body>
 <nav>
-<a class="nav-logo" href="#" onclick="showPage('home')"><img alt="858 Dumpsters" src="assets/logo.png" style="height:52px;width:auto;vertical-align:middle;background-color:#6d6c4b;border-radius:12px;padding:10px;"/></a>
+<a class="nav-logo" href="#" onclick="showPage('home')"><img alt="858 Dumpsters" src="assets/logo.png" style="height:52px;width:auto;vertical-align:middle;"/></a>
 <div class="nav-tabs">
 <div class="nav-tab active" onclick="showPage('home')">Home</div>
 <div class="nav-tab" onclick="showPage('services')">Services</div>
@@ -1035,7 +1039,7 @@
 </div>
 </div>
 <footer>
-<div class="footer-logo"><img alt="858 Dumpsters" src="assets/logo.png" style="height:80px;width:auto;background-color:#6d6c4b;border-radius:14px;padding:14px;"/></div>
+<div class="footer-logo"><img alt="858 Dumpsters" src="assets/logo.png" style="height:80px;width:auto;"/></div>
 <p>CALL OR TEXT  ·  (858) 997-4714</p>
 </footer>
 <script>
