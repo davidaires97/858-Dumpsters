@@ -65,7 +65,7 @@
   }
 
   .nav-logo { padding: 0; display: flex; }
-  .nav-logo img { display: block; height: 132px; width: auto; }
+  .nav-logo img { display: block; height: 64px; width: auto; }
 
   .nav-tabs { display: flex; gap: 0; }
 
@@ -340,7 +340,7 @@
 
   /* ── Footer ── */
   footer { background: #6d6c4b; padding: 32px 40px; text-align: center; }
-  footer .footer-logo img { height: 122px; width: auto; }
+  footer .footer-logo img { height: 90px; width: auto; }
   footer .footer-links { display: flex; justify-content: center; gap: 28px; margin-top: 8px; flex-wrap: wrap; }
   footer .footer-links a { color: var(--cream); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: .5px; display: inline-flex; align-items: center; gap: 8px; }
   footer .footer-links a:hover { color: var(--gold); }
@@ -353,7 +353,7 @@
   @media (max-width: 700px) {
     html, body { width: 100%; overflow-x: clip; }
     nav { padding: 12px 16px; justify-content: space-between; }
-    .nav-logo img { height: 92px; }
+    .nav-logo img { height: 46px; }
     .nav-tabs { display: none; }
     .nav-actions { width: auto; justify-content: flex-end; gap: 10px; }
     .nav-phone.desktop-only, .nav-cta.desktop-only { display: none; }
@@ -653,7 +653,7 @@
   }
 
   if (document.getElementById('serviceAreaMap')) {
-    var sdBoundary = [[33.245,-117.38],[33.2647,-116.9536],[33.0473,-116.8776],[32.8439,-116.7601],[32.5839,-117.113],[32.6915,-117.1767],[32.7265,-117.2445],[32.9595,-117.2653],[32.9919,-117.2678],[33.037,-117.292],[33.1581,-117.3506],[33.245,-117.38]];
+    var sdBoundary = [[33.245,-117.38],[33.2647,-116.9536],[33.02,-116.78],[32.6401,-117.0842],[32.5839,-117.113],[32.6915,-117.1767],[32.7265,-117.2445],[32.9595,-117.2653],[32.9919,-117.2678],[33.037,-117.292],[33.1581,-117.3506],[33.245,-117.38]];
     var map = L.map('serviceAreaMap', { scrollWheelZoom: false });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors',
