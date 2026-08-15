@@ -63,8 +63,8 @@
     row-gap: 10px;
   }
 
-  .nav-logo { padding: 6px 0; display: flex; }
-  .nav-logo img { display: block; height: 116px; width: auto; }
+  .nav-logo { padding: 0; display: flex; }
+  .nav-logo img { display: block; height: 122px; width: auto; }
 
   .nav-tabs { display: flex; gap: 0; }
 
@@ -334,12 +334,9 @@
 
   /* ── Footer ── */
   footer { background: #6d6c4b; padding: 32px 40px; text-align: center; }
-  footer .footer-logo img { height: 60px; width: auto; margin-bottom: 8px; }
-  footer p { font-size: 12px; color: rgba(240,234,214,0.4); letter-spacing: 1px; }
+  footer .footer-logo img { height: 122px; width: auto; }
 
   /* ── Sticky mobile call/quote bar ── */
-  .mobile-cta-bar { display: none; }
-
   @media (max-width: 900px) {
     .materials-inner, .areas-inner, .final-cta-inner { grid-template-columns: 1fr; }
   }
@@ -347,7 +344,7 @@
   @media (max-width: 700px) {
     html, body { width: 100%; overflow-x: clip; }
     nav { padding: 12px 16px; justify-content: space-between; }
-    .nav-logo img { height: 80px; }
+    .nav-logo img { height: 86px; }
     .nav-tabs { display: none; }
     .nav-actions { width: auto; justify-content: flex-end; gap: 10px; }
     .nav-phone.desktop-only, .nav-cta.desktop-only { display: none; }
@@ -362,15 +359,6 @@
       padding: 56px 20px;
     }
 
-    .mobile-cta-bar {
-      display: flex;
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 500;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
-    }
-    .mobile-cta-bar a { flex: 1; text-align: center; padding: 16px 8px; font-weight: 800; font-size: 14px; letter-spacing: .3px; text-decoration: none; }
-    .mobile-cta-bar .mcb-call { background: var(--gold); color: var(--green-dark); }
-    .mobile-cta-bar .mcb-quote { background: var(--green-dark); color: var(--cream); }
-    body { padding-bottom: 58px; }
   }
 
 </style>
@@ -404,8 +392,7 @@
 
 <section class="hero hero-split" id="top">
 <div class="hero-split-left">
-<div class="hero-eyebrow">San Diego's Friendly Dumpster Rental Service</div>
-<h1>The Right Dumpster for Your Next Project</h1>
+<h1>San Diego's Friendly Dumpster Rental Service</h1>
 <p class="lead" style="color:rgba(240,234,214,0.85);">Fast delivery, upfront pricing, and easy pickup across San Diego and surrounding areas.</p>
 
 <a class="nav-cta" href="tel:8589974714" style="padding:16px 34px; font-size:15px; align-self:flex-start;">Call Now</a>
@@ -567,13 +554,7 @@
 
 <footer>
 <div class="footer-logo"><img alt="858 Dumpsters" src="assets/logo.png"/></div>
-<p>CALL OR TEXT · 858-997-4714</p>
 </footer>
-
-<div class="mobile-cta-bar">
-<a class="mcb-call" href="tel:8589974714">Call Now</a>
-<a class="mcb-quote" href="#get-quote">Get a Quote</a>
-</div>
 
 <script>
   function submitQuote(e) {
