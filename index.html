@@ -12,8 +12,8 @@
 <meta content="https://858dumpsters.com/assets/hero-dumpster.jpg" property="og:image"/>
 <meta content="https://858dumpsters.com/assets/hero-dumpster.jpg" property="og:image:secure_url"/>
 <meta content="image/jpeg" property="og:image:type"/>
-<meta content="1448" property="og:image:width"/>
-<meta content="1086" property="og:image:height"/>
+<meta content="1536" property="og:image:width"/>
+<meta content="796" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="San Diego Dumpster Rentals" name="twitter:title"/>
 <meta content="Roll-off dumpster rentals in 13 and 20 yard sizes, delivered fast for home projects, cleanouts, and construction." name="twitter:description"/>
@@ -36,16 +36,16 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
   body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
     font-family: 'Nunito', sans-serif;
     background: var(--green-bg);
     color: var(--text);
-    min-height: 72vh;
+    overflow-x: hidden;
   }
+
+  section { scroll-margin-top: 96px; }
 
   /* ── NAV ── */
   nav {
@@ -58,941 +58,370 @@
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    flex-wrap: wrap;
+    row-gap: 10px;
   }
 
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: var(--cream);
-    letter-spacing: 1px;
-    padding: 18px 0;
-    text-decoration: none;
-  }
+  .nav-logo { padding: 14px 0; display: flex; }
+  .nav-logo img { display: block; height: 42px; width: auto; }
 
-  .nav-logo span { color: var(--gold); }
-
-  .nav-tabs {
-    display: flex;
-    gap: 0;
-  }
+  .nav-tabs { display: flex; gap: 0; }
 
   .nav-tab {
-    padding: 22px 28px;
-    color: rgba(240,234,214,0.7);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2px;
+    padding: 22px 20px;
+    color: rgba(240,234,214,0.75);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     cursor: pointer;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s;
-    user-select: none;
+    text-decoration: none;
+    transition: color 0.2s;
   }
-
   .nav-tab:hover { color: var(--cream); }
-  .nav-tab.active {
-    color: var(--gold);
-    border-bottom-color: var(--gold);
-  }
+
+  .nav-actions { display: flex; align-items: center; gap: 18px; }
+  .nav-phone { color: var(--cream); text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: .3px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .nav-phone:hover { color: var(--gold); }
 
   .nav-cta {
     background: var(--gold);
     color: var(--green-dark);
     padding: 10px 22px;
     border-radius: 4px;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 13px;
-    letter-spacing: 1px;
+    letter-spacing: .5px;
     text-decoration: none;
     transition: background 0.2s;
+    white-space: nowrap;
   }
   .nav-cta:hover { background: var(--gold-light); }
+  .nav-cta.mobile-only { display: none; }
+  .nav-hamburger { display: none; background: none; border: none; color: var(--cream); font-size: 24px; line-height: 1; cursor: pointer; padding: 4px 6px; }
 
-  /* ── PAGES ── */
-  .page { display: none; }
-  .page.active { display: block; }
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 999; background: var(--green-dark); padding: 100px 32px 32px; flex-direction: column; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: var(--cream); text-decoration: none; font-size: 18px; font-weight: 600; padding: 16px 0; border-bottom: 1px solid rgba(240,234,214,0.15); }
 
-  /* ── HOME ── */
+  /* ── Buttons: call = primary, quote = secondary ── */
+  .btn-call {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--gold); color: var(--green-dark);
+    padding: 18px 36px; border-radius: 6px;
+    font-weight: 800; font-size: 15px; letter-spacing: .5px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.35);
+    transition: all .2s;
+  }
+  .btn-call:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-call.small { padding: 13px 26px; font-size: 13px; box-shadow: none; }
+
+  .btn-quote {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; color: var(--cream);
+    border: 2px solid rgba(240,234,214,0.5);
+    padding: 16px 32px; border-radius: 6px;
+    font-weight: 700; font-size: 14px; letter-spacing: .5px;
+    text-decoration: none;
+    transition: all .2s;
+  }
+  .btn-quote:hover { border-color: var(--gold); color: var(--gold-light); }
+  .btn-quote.on-light { color: var(--green-dark); border-color: rgba(61,60,41,0.35); }
+  .btn-quote.on-light:hover { border-color: var(--green-dark); color: var(--green-dark); }
+
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+  /* ── HERO base ── */
   .hero {
     background-color: #000;
     background-image: url('assets/hero-dumpster.jpg');
     background-position: 35% 100%;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 78vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 32px 40px 40px 40px;
     position: relative;
     overflow: hidden;
   }
 
-  .hero-content { max-width: 100%; }
-
-  .hero-call-btn {
-    position: absolute;
-    top: 14%;
-    left: 14%;
-    transform: translate(-50%, -50%);
-    padding: 6px 12px !important;
-    font-size: 10px !important;
-    gap: 5px !important;
-    white-space: nowrap !important;
+  /* Split hero: dark content panel left, photo panel right */
+  .hero-split { display: grid; grid-template-columns: 1fr 1fr; background: var(--green-dark); }
+  .hero-split-left { padding: 64px 48px; display: flex; flex-direction: column; justify-content: center; }
+  .hero-split-right { position: relative; min-height: 460px; background-image: url('assets/hero-dumpster.jpg'); background-size: cover; background-position: 22% 55%; }
+  @media (max-width: 900px) {
+    .hero-split { grid-template-columns: 1fr; }
+    .hero-split-left { padding: 40px 24px; }
+    .hero-split-right { min-height: 320px; order: -1; }
   }
 
-  .hero-call-btn .phone-icon { font-size: 11px; }
+  /* Full-bleed hero (photo background, centered content) */
+  .hero-full { min-height: 74vh; display: flex; align-items: flex-end; padding: 0 48px 56px; }
+  .hero-full::before { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20,24,16,0.85) 0%, rgba(20,24,16,0.15) 55%, rgba(20,24,16,0.05) 100%); }
+  .hero-full-content { position: relative; z-index: 1; max-width: 640px; }
+  @media (max-width: 700px) {
+    .hero-full { min-height: 64vh; padding: 0 20px 40px; align-items: flex-end; }
+  }
 
   .hero-eyebrow {
-    font-size: 11px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: #ffffff;
-    margin-bottom: 20px;
-    font-weight: 600;
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--gold-light); margin-bottom: 18px; font-weight: 700;
   }
 
   .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(52px, 8vw, 84px);
+    font-size: clamp(38px, 4.6vw, 58px);
     font-weight: 900;
     color: var(--cream);
-    line-height: 1.05;
-    margin-bottom: 24px;
-    letter-spacing: 2px;
+    line-height: 1.08;
+    margin-bottom: 20px;
+    letter-spacing: .5px;
   }
 
-  .hero p {
-    font-size: 18px;
-    color: #ffffff;
-    font-weight: 300;
-    margin-bottom: 32px;
-    line-height: 1.7;
+  .hero p.lead {
+    font-size: 16px; color: rgba(240,234,214,0.85); font-weight: 300;
+    margin-bottom: 28px; line-height: 1.7; max-width: 480px;
   }
 
-  .hero-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--gold);
-    color: var(--green-dark);
-    padding: 18px 40px;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 1px;
-    text-decoration: none;
-    transition: all 0.2s;
-    box-shadow: 0 4px 20px rgba(201,168,76,0.3);
-  }
-  .hero-btn:hover {
-    background: var(--gold-light);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(201,168,76,0.4);
-  }
-
-  .hero-btn .phone-icon { font-size: 18px; }
-
-  /* Trust bar */
-  .trust-bar {
-    background: var(--green-dark);
-    padding: 20px 40px;
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-  }
-
-  .trust-item {
+  .hero-call-badge {
+    position: absolute;
+    background: rgba(30,29,18,0.88);
+    border-radius: 10px;
+    padding: 18px 24px;
     color: var(--cream);
-    font-size: 13px;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    opacity: 0.85;
+    display: flex; align-items: center; gap: 14px;
   }
-
-  .trust-item .icon { color: var(--gold); font-size: 16px; }
-
-  /* Highlights */
-  .highlights {
-    padding: 100px 40px;
-    max-width: 100%;
-    margin: 0;
-    background: var(--green);
+  .hero-call-badge .icon-circle {
+    width: 42px; height: 42px; border-radius: 50%; background: var(--gold);
+    display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
   }
+  .hero-call-badge .label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 2px; }
+  .hero-call-badge .num { font-weight: 800; font-size: 17px; }
+  .hero-call-badge .sub { font-size: 11px; color: rgba(240,234,214,0.7); }
+  .hero-call-badge.inline {
+    position: static;
+    margin-top: 28px;
+    max-width: 420px;
+    text-decoration: none;
+    border: 1px solid rgba(201,168,76,0.3);
+    transition: background .2s;
+  }
+  .hero-call-badge.inline:hover { background: rgba(30,29,18,1); }
 
-  .highlights .section-title { color: var(--cream); text-align: center; }
+  .hero-check-row { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 26px; }
+  .hero-check-row span { color: rgba(240,234,214,0.85); font-size: 13px; display: flex; align-items: center; gap: 8px; }
+  .hero-check-row span::before { content: '✓'; color: var(--gold); font-weight: 900; }
 
   .section-label {
-    font-size: 11px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 16px;
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: var(--gold); font-weight: 700; margin-bottom: 16px;
   }
-
   .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 4vw, 48px);
+    font-size: clamp(28px, 3.6vw, 44px);
     color: var(--green-dark);
-    margin-bottom: 60px;
     line-height: 1.2;
   }
 
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
-  }
+  /* ── Persona cards ── */
+  .persona-section { background: var(--green-bg); padding: 80px 40px; }
+  .persona-section .section-intro { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+  .persona-section .section-label, .persona-section .section-title { justify-content: center; }
+  .persona-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+  .persona-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 32px 24px; text-align: center; transition: transform .2s, box-shadow .2s; }
+  .persona-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+  .persona-card .icon { font-size: 30px; margin-bottom: 14px; }
+  .persona-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--green-dark); margin-bottom: 8px; }
+  .persona-card p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
 
-  .card {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 8px;
-    padding: 40px 32px;
-    border-top: 3px solid var(--gold);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
+  /* ── Trust icon row ── */
+  .trust-row { background: var(--green); padding: 56px 40px; }
+  .trust-row-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; text-align: center; }
+  .trust-row-item .icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(201,168,76,0.18); color: var(--gold); font-size: 22px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+  .trust-row-item h4 { font-family: 'Playfair Display', serif; color: var(--cream); font-size: 17px; margin-bottom: 8px; }
+  .trust-row-item p { color: rgba(240,234,214,0.75); font-size: 13px; line-height: 1.6; }
 
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-  }
-
-  .card-icon {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
-
-  .card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: var(--cream);
-    margin-bottom: 12px;
-  }
-
-  .card p {
-    font-size: 14px;
-    color: rgba(240,234,214,0.85);
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  /* About strip */
-  .about-strip {
-    background: var(--green);
-    padding: 80px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    flex-wrap: wrap;
-  }
-
-  .about-text { max-width: 100%; }
-  .about-text .section-label { color: var(--gold-light); }
-  .about-text .section-title { color: var(--cream); margin-bottom: 20px; }
-  .about-text p { color: rgba(240,234,214,0.85); font-size: 16px; line-height: 1.8; font-weight: 300; }
-
-  .about-badge {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 8px;
-    padding: 40px;
-    text-align: center;
-    min-width: 100%;
-  }
-
-  .about-badge .name {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: var(--cream);
-    margin-bottom: 6px;
-  }
-
-  .about-badge .title {
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  .about-badge .divider {
-    width: 100%;
-    height: 1px;
-    background: var(--gold);
-    margin: 16px auto;
-  }
-
-  .about-badge .tagline {
-    font-size: 13px;
-    color: rgba(240,234,214,0.7);
-    font-style: italic;
-  }
-
-  /* ── SERVICES ── */
-  .services-hero {
-    background: var(--green);
-    padding: 80px 40px;
-    text-align: center;
-  }
-
-  .services-hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 6vw, 64px);
-    color: var(--cream);
-    margin-bottom: 16px;
-  }
-
-  .services-hero p {
-    color: rgba(240,234,214,0.8);
-    font-size: 17px;
-    font-weight: 300;
-  }
-
-  .services-grid {
-    max-width: 100%;
-    margin: 0;
-    padding: 80px 40px 24px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 28px;
-  }
-
-  .service-card {
-    background: #e8e8e3;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 8px;
-    padding: 40px 32px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-    transition: transform 0.2s, box-shadow 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--gold);
-    transform: scaleX(0);
-    transition: transform 0.2s;
-  }
-
-  .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
-  .service-card:hover::after { transform: scaleX(1); }
-
-  .service-card .icon { font-size: 36px; margin-bottom: 20px; }
-
-  .service-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: var(--green-dark);
-    margin-bottom: 12px;
-  }
-
-  .service-card p {
-    font-size: 14px;
-    color: var(--text-light);
-    line-height: 1.8;
-    font-weight: 300;
-  }
-
-  .sizes-section {
-    background: var(--green-bg);
-    padding: 80px 40px;
-  }
-
-  .sizes-intro {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 56px;
-  }
-
-  .sizes-intro .section-label { justify-content: center; }
-
-  .size-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
-    gap: 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .size-card {
-    background: #e8e8e3;
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 10px;
-    padding: 32px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  }
-
-  .size-card-photo {
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 24px;
-  }
-
+  /* ── Sizes ── */
+  .sizes-section { background: var(--green-bg); padding: 80px 40px; }
+  .sizes-intro { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+  .sizes-intro .section-label { justify-content: center; display: flex; }
+  .size-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto; }
+  .size-card { background: #e8e8e3; border: 1px solid rgba(0,0,0,0.1); border-radius: 10px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+  .size-card-photo { border-radius: 8px; overflow: hidden; margin-bottom: 24px; }
   .size-card-photo img { display: block; width: 100%; height: auto; aspect-ratio: 1448 / 1086; object-fit: cover; }
-
-  .size-card h3 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    color: var(--green-dark);
-    margin-bottom: 6px;
-  }
-
-  .size-card-tagline {
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-light);
-    margin-bottom: 24px;
-    font-weight: 600;
-  }
-
-  .size-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-
-  .size-stat {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 6px;
-    padding: 14px 18px;
-    background: #fff;
-  }
-
+  .size-card h3 { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 24px; color: var(--green-dark); margin-bottom: 6px; }
+  .size-card-tagline { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 24px; font-weight: 600; }
+  .size-stats { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+  .size-stat { display: flex; align-items: center; gap: 14px; border: 1px solid rgba(0,0,0,0.15); border-radius: 6px; padding: 14px 18px; background: #fff; }
   .size-stat-icon { font-size: 20px; flex-shrink: 0; }
-
   .size-stat strong { color: var(--green-dark); font-weight: 700; }
   .size-stat span { font-size: 14px; color: var(--text-light); }
-
-  .size-card-btn {
-    display: block;
-    text-align: center;
-    background: var(--gold);
-    color: var(--green-dark);
-    padding: 16px;
-    border-radius: 6px;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: background 0.2s;
-  }
+  .size-card-btn { display: block; text-align: center; background: var(--gold); color: var(--green-dark); padding: 16px; border-radius: 6px; font-weight: 700; font-size: 14px; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; transition: background 0.2s; }
   .size-card-btn:hover { background: var(--gold-light); }
 
-  .services-cta {
-    background: #6d6c4b;
-    padding: 40px 40px 80px;
-    text-align: center;
+  /* ── Quote widget (inline, in hero) ── */
+  .quote-widget { background: #fff; border-radius: 12px; padding: 26px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); max-width: 420px; }
+  .quote-widget .qw-title { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); font-weight: 800; margin-bottom: 18px; }
+  .qw-option { display: flex; align-items: center; gap: 14px; border: 2px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; cursor: pointer; transition: border-color .2s; }
+  .qw-option.selected { border-color: var(--gold); background: #fdf9ee; }
+  .qw-option input { accent-color: var(--gold); width: 18px; height: 18px; }
+  .qw-option .qw-option-body h5 { font-size: 14px; color: var(--green-dark); margin-bottom: 2px; }
+  .qw-option .qw-option-body p { font-size: 12px; color: var(--text-light); }
+  .qw-photo { width: 60px; height: 45px; border-radius: 6px; overflow: hidden; flex-shrink: 0; }
+  .qw-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ── Steps ── */
+  .steps-section { background: var(--green-dark); padding: 80px 40px; }
+  .steps-section .section-label { color: var(--gold-light); justify-content: center; display: flex; }
+  .steps-section .section-title { color: var(--cream); text-align: center; margin-bottom: 56px; }
+  .steps-row { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px; }
+  .step { text-align: center; }
+  .step .num { width: 46px; height: 46px; border-radius: 50%; background: var(--gold); color: var(--green-dark); font-family: 'Playfair Display', serif; font-weight: 900; font-size: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+  .step h4 { color: var(--cream); font-size: 15px; margin-bottom: 8px; letter-spacing: .3px; }
+  .step p { color: rgba(240,234,214,0.65); font-size: 13px; line-height: 1.6; }
+
+  /* ── Materials ── */
+  .materials-section { background: var(--green-bg); padding: 80px 40px; }
+  .materials-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 32px; align-items: start; }
+  .materials-intro .section-title { margin-bottom: 16px; }
+  .materials-intro p { color: var(--text-light); font-size: 15px; line-height: 1.8; font-weight: 300; }
+  .materials-card { background: #fff; border-radius: 10px; padding: 28px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+  .materials-card h4 { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .materials-card.accept h4 { color: #3f7a4d; }
+  .materials-card.reject h4 { color: #a5473a; }
+  .materials-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .materials-card li { font-size: 14px; color: var(--text-light); padding-left: 20px; position: relative; }
+  .materials-card.accept li::before { content: '✓'; position: absolute; left: 0; color: #3f7a4d; font-weight: 700; }
+  .materials-card.reject li::before { content: '✕'; position: absolute; left: 0; color: #a5473a; font-weight: 700; }
+
+  /* ── Areas we serve ── */
+  .areas-section { background: var(--green); padding: 80px 40px; }
+  .areas-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .areas-text .section-label { color: var(--gold-light); }
+  .areas-text .section-title { color: var(--cream); margin-bottom: 16px; }
+  .areas-text p { color: rgba(240,234,214,0.8); font-size: 15px; line-height: 1.8; font-weight: 300; margin-bottom: 24px; }
+  .areas-list { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+  .areas-list span { background: rgba(255,255,255,0.08); border: 1px solid rgba(201,168,76,0.3); color: var(--cream); font-size: 12px; padding: 6px 14px; border-radius: 20px; }
+  .areas-map { border-radius: 10px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
+  .areas-map iframe { display: block; width: 100%; height: 340px; border: 0; }
+
+  /* ── About ── */
+  .about-section { background: var(--green-bg); padding: 80px 40px; }
+  .about-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .about-inner .section-label, .about-inner .section-title { justify-content: center; display: flex; }
+  .about-inner p { color: var(--text-light); font-size: 16px; line-height: 1.85; font-weight: 300; margin: 20px auto 0; max-width: 700px; }
+  .about-badges { display: flex; justify-content: center; gap: 40px; margin-top: 36px; flex-wrap: wrap; }
+  .about-badges div { text-align: center; }
+  .about-badges .icon { font-size: 24px; margin-bottom: 8px; }
+  .about-badges .t { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--green-dark); font-weight: 700; }
+
+  /* ── Final CTA with quote form ── */
+  .final-cta { background: #6d6c4b; padding: 80px 40px; }
+  .final-cta-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .final-cta-text .section-label { color: var(--gold-light); }
+  .final-cta-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.4vw, 40px); color: var(--cream); margin-bottom: 14px; }
+  .final-cta-text p { color: rgba(240,234,214,0.75); font-size: 15px; line-height: 1.7; margin-bottom: 24px; font-weight: 300; }
+  .final-cta-text .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .quote-card { background: #fff; border-radius: 12px; padding: 32px; box-shadow: 0 8px 40px rgba(0,0,0,0.2); }
+  .quote-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--green-dark); margin-bottom: 4px; }
+  .quote-card .sub { font-size: 12px; color: var(--text-light); margin-bottom: 22px; }
+  .quote-field { margin-bottom: 16px; }
+  .quote-field label { display: block; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; font-weight: 700; }
+  .quote-field input, .quote-field select { width: 100%; padding: 12px 14px; border: 1px solid rgba(0,0,0,0.15); border-radius: 6px; font-family: 'Nunito', sans-serif; font-size: 14px; color: var(--text); background: #fafaf8; }
+  .quote-field input:focus, .quote-field select:focus { outline: 2px solid var(--gold); }
+  .quote-submit { width: 100%; background: var(--gold); color: var(--green-dark); border: none; padding: 16px; border-radius: 6px; font-weight: 800; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: background .2s; }
+  .quote-submit:hover { background: var(--gold-light); }
+
+  /* ── Footer ── */
+  footer { background: #6d6c4b; padding: 32px 40px; text-align: center; }
+  footer .footer-logo img { height: 60px; width: auto; margin-bottom: 8px; }
+  footer p { font-size: 12px; color: rgba(240,234,214,0.4); letter-spacing: 1px; }
+
+  /* ── Sticky mobile call/quote bar ── */
+  .mobile-cta-bar { display: none; }
+
+  @media (max-width: 900px) {
+    .materials-inner, .areas-inner, .final-cta-inner { grid-template-columns: 1fr; }
   }
 
-  .services-cta h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    color: var(--cream);
-    margin-bottom: 12px;
-  }
-
-  .services-cta p {
-    color: rgba(240,234,214,0.7);
-    margin-bottom: 36px;
-    font-weight: 300;
-  }
-
-  /* ── CONTACT ── */
-  .contact-page {
-    max-width: 100%;
-    margin: 0;
-    padding: 80px 40px;
-    text-align: center;
-    background: var(--green-bg);
-  }
-
-  .contact-page .section-label { justify-content: center; display: block; }
-
-  .contact-page h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 5vw, 56px);
-    color: var(--green-dark);
-    margin-bottom: 16px;
-  }
-
-  .contact-page .subtitle {
-    font-size: 17px;
-    color: var(--text-light);
-    font-weight: 300;
-    margin-bottom: 60px;
-    line-height: 1.7;
-  }
-
-  .contact-card {
-    background: var(--green);
-    border-radius: 12px;
-    padding: 60px 40px;
-    margin-bottom: 32px;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.15);
-  }
-
-  .big-phone {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    font-size: clamp(28px, 5vw, 44px); white-space: nowrap;
-    color: var(--cream);
-    text-decoration: none;
-    display: block;
-    margin-bottom: 12px;
-    transition: color 0.2s;
-  }
-
-  .contact-email { font-size: clamp(22px, 3.2vw, 34px); }
-
-  .big-phone:hover { color: var(--gold); }
-
-  .contact-card .sub {
-    font-size: 13px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 18px;
-  }
-
-  .contact-details {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-  }
-
-  .contact-detail {
-    background: #e8e8e3;
-    border-radius: 8px;
-    padding: 28px 32px;
-    text-align: center;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    min-width: 100%;
-  }
-
-  .contact-detail .d-icon { font-size: 24px; margin-bottom: 8px; }
-
-  .contact-detail .d-label {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-light);
-    margin-bottom: 6px;
-  }
-
-  .contact-detail .d-value {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--green-dark);
-  }
-
-  .contact-detail .d-value a {
-    color: var(--gold);
-    text-decoration: none;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: #6d6c4b;
-    padding: 32px 40px;
-    text-align: center;
-  }
-
-  footer .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: var(--cream);
-    margin-bottom: 8px;
-  }
-
-  footer .footer-logo span { color: var(--gold); }
-
-  footer p {
-    font-size: 12px;
-    color: rgba(240,234,214,0.4);
-    letter-spacing: 1px;
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .page.active .hero-content,
-  .page.active .highlights,
-  .page.active .services-grid,
-  .page.active .contact-page {
-    animation: fadeUp 0.5s ease both;
-  }
-
-
-  /* Mobile clean-up: prevents contact page/nav from cutting off on phones */
   @media (max-width: 700px) {
     html, body { width: 100%; overflow-x: hidden; }
+    nav { padding: 12px 16px; justify-content: space-between; }
+    .nav-logo img { height: 34px; }
+    .nav-tabs { display: none; }
+    .nav-actions { width: auto; justify-content: flex-end; gap: 10px; }
+    .nav-phone.desktop-only, .nav-cta.desktop-only { display: none; }
+    .nav-cta.mobile-only { display: inline-flex; padding: 10px 16px; font-size: 12px; }
+    .nav-hamburger { display: block; }
 
-    nav {
-      padding: 8px 12px !important;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
+    .hero h1 { font-size: clamp(30px, 8vw, 42px); }
+    .hero p.lead { font-size: 14px; }
+    .hero-call-badge.inline { max-width: 100%; padding: 16px 18px; }
+
+    .persona-section, .trust-row, .sizes-section, .steps-section, .materials-section, .areas-section, .about-section, .final-cta {
+      padding: 56px 20px;
     }
 
-    .nav-logo { padding: 6px 0 !important; width: 100%; text-align: center; }
-    .nav-logo img { max-height: 110px !important; max-width: 92vw !important; }
-
-    .nav-tabs {
-      width: 100%;
+    .mobile-cta-bar {
       display: flex;
-      justify-content: center;
-      gap: 4px;
-      flex-wrap: nowrap;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 500;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
     }
-
-    .nav-tab {
-      padding: 12px 8px !important;
-      font-size: 11px !important;
-      letter-spacing: 1px !important;
-      white-space: nowrap;
-      flex: 1 1 auto;
-      text-align: center;
-    }
-
-    .nav-cta { display: none !important; }
-
-    .contact-page {
-      width: 100% !important;
-      max-width: 100% !important;
-      padding: 42px 16px 56px !important;
-      overflow: visible !important;
-    }
-
-    .contact-page h1 {
-      font-size: 38px !important;
-      line-height: 1.05 !important;
-      margin-bottom: 14px !important;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-page .subtitle {
-      font-size: 16px !important;
-      line-height: 1.55 !important;
-      margin: 0 auto 28px !important;
-      max-width: 340px !important;
-    }
-
-    .contact-card {
-      width: 100% !important;
-      max-width: 360px !important;
-      margin: 0 auto 24px !important;
-      padding: 34px 14px !important;
-      border-radius: 10px !important;
-    }
-
-    .big-phone {
-      font-size: clamp(30px, 8vw, 36px) !important;
-      white-space: normal !important;
-      overflow-wrap: anywhere !important;
-      line-height: 1.15 !important;
-    }
-
-    .contact-email {
-      font-size: clamp(16px, 5.6vw, 24px) !important;
-      white-space: nowrap !important;
-      overflow-wrap: normal !important;
-    }
-
-    footer { padding: 26px 16px !important; }
-    footer .footer-logo img { max-height: 120px !important; max-width: 90vw !important; }
-    footer p { font-size: 11px !important; line-height: 1.5 !important; }
+    .mobile-cta-bar a { flex: 1; text-align: center; padding: 16px 8px; font-weight: 800; font-size: 14px; letter-spacing: .3px; text-decoration: none; }
+    .mobile-cta-bar .mcb-call { background: var(--gold); color: var(--green-dark); }
+    .mobile-cta-bar .mcb-quote { background: var(--green-dark); color: var(--cream); }
+    body { padding-bottom: 58px; }
   }
 
-  @media (max-width: 380px) {
-    .nav-tab { font-size: 10px !important; padding-left: 5px !important; padding-right: 5px !important; }
-    .contact-page h1 { font-size: 34px !important; }
-    .contact-card { padding-left: 10px !important; padding-right: 10px !important; }
-    .big-phone { font-size: 29px !important; }
-    .contact-email { font-size: clamp(14px, 5vw, 19px) !important; }
-  }
-
-
-  /* Mobile spacing fix: remove the big blank gap between Eco-Friendly Disposal and What We Do */
-  @media (max-width: 700px) {
-    .trust-bar {
-      padding: 36px 24px 18px !important;
-      gap: 18px !important;
-      row-gap: 18px !important;
-      flex-direction: column !important;
-      align-items: center !important;
-    }
-
-    .trust-item {
-      font-size: 17px !important;
-      line-height: 1.35 !important;
-      width: auto !important;
-      justify-content: center !important;
-    }
-
-    .trust-item .icon {
-      font-size: 22px !important;
-      min-width: 28px !important;
-      text-align: center !important;
-    }
-
-    .highlights {
-      padding: 28px 28px 70px !important;
-      margin-top: 0 !important;
-    }
-
-    .highlights .section-label {
-      margin-bottom: 18px !important;
-    }
-
-    .highlights .section-title {
-      margin-bottom: 36px !important;
-    }
-  }
-
-</style>
-
-<style id="real-mobile-fix">
-/* REAL MOBILE FIX: remove the fake second nav by using the clean hero image on phones, not the baked screenshot image. */
-@media (max-width: 700px) {
-  html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-    background: #3d3c29 !important;
-  }
-
-  *, *::before, *::after {
-    box-sizing: border-box !important;
-    max-width: 100% !important;
-  }
-
-  nav {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 1000 !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    margin: 0 !important;
-    padding: 18px 0 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 10px !important;
-    background: #6d6c4b !important;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15) !important;
-  }
-
-  .nav-logo {
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    text-align: center !important;
-    display: block !important;
-  }
-
-  .nav-logo img {
-    height: 90px !important;
-    width: auto !important;
-    max-width: 260px !important;
-    display: inline-block !important;
-  }
-
-  .nav-tabs {
-    width: 100% !important;
-    min-width: 0 !important;
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .nav-tab {
-    min-width: 0 !important;
-    width: auto !important;
-    padding: 15px 0 13px !important;
-    text-align: center !important;
-    font-size: 12px !important;
-    line-height: 1 !important;
-    letter-spacing: 1.6px !important;
-    white-space: nowrap !important;
-  }
-
-  .nav-cta { display: none !important; }
-
-  .hero,
-  section.hero,
-  .home-hero,
-  #hero {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-    aspect-ratio: 1448 / 1086 !important;
-    margin: 0 !important;
-    padding: 32px 20px !important;
-    background-color: #3d3c29 !important;
-    background-size: cover !important;
-    background-position: center center !important;
-  }
-
-  .hero h1 {
-    font-size: clamp(32px, 9vw, 44px) !important;
-    margin-bottom: 14px !important;
-  }
-
-  .hero p {
-    font-size: 15px !important;
-    margin-bottom: 22px !important;
-  }
-
-  .hero-call-btn {
-    top: 14% !important;
-    left: 16% !important;
-    padding: 4px 8px !important;
-    font-size: 8px !important;
-    gap: 3px !important;
-  }
-
-  .hero-call-btn .phone-icon { font-size: 9px !important; }
-
-  .trust-bar {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 16px 14px !important;
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-    background: #3d3c29 !important;
-    overflow: hidden !important;
-  }
-
-  .trust-item {
-    width: 100% !important;
-    justify-content: center !important;
-    text-align: center !important;
-    font-size: 13px !important;
-    letter-spacing: .5px !important;
-    white-space: normal !important;
-  }
-
-  .contact-page, .services-hero, .services-grid, .highlights, footer {
-    width: 100% !important;
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-
-  .contact-card {
-    width: 100% !important;
-    max-width: 360px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-</style>
-
-
-<style id="final-desktop-and-mobile-polish">
-/* Final polish: keep mobile one-nav layout, and prevent heading wrap */
-@media (max-width: 700px) {
-  body, .trust-bar {
-    background-color: #3d3c29 !important;
-  }
-
-  nav, footer {
-    background-color: #6d6c4b !important;
-  }
-
-  .services-cta h2 {
-    font-size: 24px !important;
-    line-height: 1.15 !important;
-    letter-spacing: -0.5px !important;
-    white-space: nowrap !important;
-  }
-
-  .services-cta {
-    padding-left: 14px !important;
-    padding-right: 14px !important;
-  }
-}
-
-@media (max-width: 360px) {
-  .services-cta h2 {
-    font-size: 20px !important;
-  }
-}
 </style>
 </head>
 <body>
+
 <nav>
+<a class="nav-logo" href="#top"><img alt="858 Dumpsters" src="assets/logo.png"/></a>
 <div class="nav-tabs">
-<div class="nav-tab active" onclick="showPage('home')">Home</div>
-<div class="nav-tab" onclick="showPage('services')">Services</div>
-<div class="nav-tab" onclick="showPage('contact')">Contact</div>
+<a class="nav-tab" href="#sizes">Dumpster Sizes</a>
+<a class="nav-tab" href="#how-it-works">How It Works</a>
+<a class="nav-tab" href="#areas">Areas We Serve</a>
+<a class="nav-tab" href="#about">About Us</a>
 </div>
-<a class="nav-cta" href="tel:8589974714">Call Now</a>
+<div class="nav-actions">
+<a class="nav-phone desktop-only" href="tel:8589974714">📞 858-997-4714</a>
+<a class="nav-cta desktop-only" href="tel:8589974714">Call Now</a>
+<a class="nav-cta mobile-only" href="#get-quote">Get a Quote</a>
+<button aria-label="Menu" class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
+</div>
 </nav>
-<!-- ══ HOME ══ -->
-<div class="page active" id="page-home">
-<section class="hero">
-<a class="hero-btn hero-call-btn" href="tel:8589974714">
-<span class="phone-icon">📞</span>
-        858-997-4714
-      </a>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="#sizes" onclick="closeMobileMenu()">Dumpster Sizes</a>
+<a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+<a href="#areas" onclick="closeMobileMenu()">Areas We Serve</a>
+<a href="#about" onclick="closeMobileMenu()">About Us</a>
+<a href="tel:8589974714" onclick="closeMobileMenu()">📞 Call or Text 858-997-4714</a>
+</div>
+
+<section class="hero hero-split" id="top">
+<div class="hero-split-left">
+<div class="hero-eyebrow">San Diego Dumpster Rentals</div>
+<h1>The Right Dumpster for Your Next Project</h1>
+<p class="lead" style="color:rgba(240,234,214,0.85);">Fast delivery, upfront pricing, and easy pickup across San Diego and surrounding areas.</p>
+
+<a class="hero-call-badge inline" href="tel:8589974714">
+<div class="icon-circle">📞</div>
+<div>
+<div class="label">Call or Text</div>
+<div class="num">858-997-4714</div>
+<div class="sub">We're here to help.</div>
+</div>
+</a>
+</div>
+<div class="hero-split-right"></div>
 </section>
-<section class="highlights">
-<div class="section-title">San Diego<br/>Dumpster Rentals</div>
-<div class="cards-grid">
-<div class="card">
-<div class="card-icon">🏠</div>
-<h3>Residential Dumpster Rentals</h3>
-<p>Home cleanouts, remodels, and yard projects — we deliver the right size dumpster right to your driveway.</p>
-</div>
-<div class="card">
-<div class="card-icon">🚛</div>
-<h3>Fast Delivery &amp; Pickup</h3>
-<p>Need a dumpster fast? We offer prompt delivery and pickup so your project stays on schedule.</p>
-</div>
-<div class="card">
-<div class="card-icon">🏗️</div>
-<h3>Roll-Off Dumpsters</h3>
-<p>Heavy-duty roll-off dumpsters built for construction debris, remodels, and job site cleanups.</p>
-</div>
-</div>
-</section>
-<section class="sizes-section">
+
+<section class="sizes-section" id="sizes">
 <div class="sizes-intro">
-<div class="section-label">Dumpster Sizes</div>
-<div class="section-title">Pick the size<br/>that fits your job.</div>
+<div class="section-label">Choose the Right Size</div>
+<div class="section-title">Two sizes. Right for your job.</div>
 </div>
 <div class="size-cards">
 <div class="size-card">
@@ -1005,7 +434,7 @@
 <div class="size-stat"><span class="size-stat-icon">⚖️</span><span><strong>Weight:</strong> 1 ton included</span></div>
 <div class="size-stat"><span class="size-stat-icon">📅</span><span><strong>Rental Days:</strong> Up to 5 days included</span></div>
 </div>
-<a class="size-card-btn" href="tel:8589974714">Book a 13-Yard Dumpster</a>
+<a class="size-card-btn" href="#get-quote">Get a Quote →</a>
 </div>
 <div class="size-card">
 <div class="size-card-photo"><img alt="858 Dumpsters 20 yard roll-off dumpster" src="assets/dumpster-sizes.jpg"/></div>
@@ -1017,120 +446,167 @@
 <div class="size-stat"><span class="size-stat-icon">⚖️</span><span><strong>Weight:</strong> 1 ton included</span></div>
 <div class="size-stat"><span class="size-stat-icon">📅</span><span><strong>Rental Days:</strong> Up to 5 days included</span></div>
 </div>
-<a class="size-card-btn" href="tel:8589974714">Book a 20-Yard Dumpster</a>
+<a class="size-card-btn" href="#get-quote">Get a Quote →</a>
 </div>
 </div>
 </section>
-<section class="about-strip">
-<div class="about-text">
+
+<section class="steps-section" id="how-it-works">
+<div class="section-label">How It Works</div>
+<div class="section-title">Renting a dumpster in 4 easy steps.</div>
+<div class="steps-row">
+<div class="step"><div class="num">1</div><h4>Request a Quote</h4><p>Call, text, or fill out our quick form with your project details and location.</p></div>
+<div class="step"><div class="num">2</div><h4>We Deliver</h4><p>We'll deliver your dumpster right where you need it, on your schedule.</p></div>
+<div class="step"><div class="num">3</div><h4>You Fill It Up</h4><p>Tackle your project. We include up to 5 days with 1 ton of weight.</p></div>
+<div class="step"><div class="num">4</div><h4>We Haul It Away</h4><p>When you're done, we'll pick it up and handle the disposal responsibly.</p></div>
+</div>
+</section>
+
+<section class="materials-section" id="materials">
+<div class="materials-inner">
+<div class="materials-intro">
+<div class="section-label">Good to Know</div>
+<div class="section-title">What can go in the dumpster?</div>
+<p>We accept most construction debris, household junk, yard waste, and renovation materials. Not sure about something? Just ask.</p>
+</div>
+<div class="materials-card accept">
+<h4>✓ Accepted Materials</h4>
+<ul><li>Household junk &amp; clutter</li><li>Construction debris</li><li>Drywall &amp; wood</li><li>Roofing shingles</li><li>Yard waste &amp; branches</li><li>Furniture &amp; appliances</li></ul>
+</div>
+<div class="materials-card reject">
+<h4>✕ Not Accepted</h4>
+<ul><li>Hazardous materials</li><li>Paints, oils &amp; solvents</li><li>Asbestos</li><li>Tires</li><li>Batteries</li></ul>
+</div>
+</div>
+</section>
+
+<section class="areas-section" id="areas">
+<div class="areas-inner">
+<div class="areas-text">
+<div class="section-label">Proudly Serving</div>
+<div class="section-title">San Diego County and surrounding areas.</div>
+<p>From coast to inland, we deliver reliable dumpster rental service to homes and job sites across the San Diego area.</p>
+<div class="areas-list"><span>San Diego</span><span>Chula Vista</span><span>Oceanside</span><span>Escondido</span><span>El Cajon</span><span>Poway</span><span>Carlsbad</span><span>La Mesa</span></div>
+<a class="btn-quote" href="tel:8589974714">📞 858-997-4714</a>
+</div>
+<div class="areas-map">
+<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-117.35%2C32.55%2C-116.95%2C33.05&amp;layer=mapnik" title="San Diego service area map"></iframe>
+</div>
+</div>
+</section>
+
+<section class="persona-section" id="who">
+<div class="section-intro">
+<div class="section-label">Who Are You Renting For?</div>
+<div class="section-title">Tell us about your project.</div>
+</div>
+<div class="persona-grid">
+<div class="persona-card"><div class="icon">🏠</div><h4>Homeowner</h4><p>Cleanouts, remodels, and home improvement projects.</p></div>
+<div class="persona-card"><div class="icon">👷</div><h4>Contractor</h4><p>Job sites, renovations, and construction projects.</p></div>
+<div class="persona-card"><div class="icon">🏘️</div><h4>Roofer or Framer</h4><p>Shingle tear-offs, framing, and roofing projects.</p></div>
+<div class="persona-card"><div class="icon">🏢</div><h4>Real Estate Cleanout</h4><p>Property cleanouts, turnovers, and more.</p></div>
+</div>
+</section>
+
+<section class="about-section" id="about">
+<div class="about-inner">
 <div class="section-label">About Us</div>
-<div class="section-title">Local, reliable,<br/>and ready to help.</div>
-<p>858 Dumpsters is your local dumpster rental service built on hard work and honest pricing. No hidden fees, no hassle — just tell us what size you need and we'll deliver it right to your driveway.</p>
-</div>
-<div class="about-badge">
-<div class="name">Locally Owned<br/>&amp; Operated</div>
-<div class="divider" style="width: 100%;"></div>
-<div class="tagline">Serving the community<br/>one dumpster at a time.</div>
-</div>
-</section>
-</div>
-<!-- ══ SERVICES ══ -->
-<div class="page" id="page-services">
-<section class="services-hero">
-<div class="section-label" style="color:var(--gold-light);">What We Offer</div>
-<h1>Our Services</h1>
-<p>Fast, affordable, and done right.</p>
-</section>
-<section class="sizes-section">
-<div class="sizes-intro">
-<div class="section-label">Dumpster Sizes</div>
-<div class="section-title">Pick the size<br/>that fits your job.</div>
-</div>
-<div class="size-cards">
-<div class="size-card">
-<div class="size-card-photo"><img alt="858 Dumpsters 13 yard roll-off dumpster" src="assets/hero-dumpster.jpg"/></div>
-<h3>13 Yard Dumpster</h3>
-<p class="size-card-tagline">Great for smaller cleanouts &amp; renovations</p>
-<div class="size-stats">
-<div class="size-stat"><span class="size-stat-icon">💲</span><span><strong>Price Starts At</strong> $450</span></div>
-<div class="size-stat"><span class="size-stat-icon">📐</span><span><strong>Dimensions:</strong> 14'L x 7'W x 4'H</span></div>
-<div class="size-stat"><span class="size-stat-icon">⚖️</span><span><strong>Weight:</strong> 1 ton included</span></div>
-<div class="size-stat"><span class="size-stat-icon">📅</span><span><strong>Rental Days:</strong> Up to 5 days included</span></div>
-</div>
-<a class="size-card-btn" href="tel:8589974714">Book a 13-Yard Dumpster</a>
-</div>
-<div class="size-card">
-<div class="size-card-photo"><img alt="858 Dumpsters 20 yard roll-off dumpster" src="assets/dumpster-sizes.jpg"/></div>
-<h3>20 Yard Dumpster</h3>
-<p class="size-card-tagline">Our most popular size for remodels &amp; construction</p>
-<div class="size-stats">
-<div class="size-stat"><span class="size-stat-icon">💲</span><span><strong>Price Starts At</strong> $600</span></div>
-<div class="size-stat"><span class="size-stat-icon">📐</span><span><strong>Dimensions:</strong> 14'L x 7'W x 6'H</span></div>
-<div class="size-stat"><span class="size-stat-icon">⚖️</span><span><strong>Weight:</strong> 1 ton included</span></div>
-<div class="size-stat"><span class="size-stat-icon">📅</span><span><strong>Rental Days:</strong> Up to 5 days included</span></div>
-</div>
-<a class="size-card-btn" href="tel:8589974714">Book a 20-Yard Dumpster</a>
+<div class="section-title">Local, reliable, and ready to help.</div>
+<p>858 Dumpsters is your local dumpster rental service built on hard work and honest pricing. No hidden fees, no hassle — just show us what needs to go and we'll take care of the rest.</p>
+<div class="about-badges">
+<div><div class="icon">⭐</div><div class="t">Locally Owned</div></div>
+<div><div class="icon">💲</div><div class="t">Upfront Pricing</div></div>
+<div><div class="icon">🚛</div><div class="t">Fast Delivery</div></div>
 </div>
 </div>
 </section>
-<div class="services-grid">
-<div class="service-card">
-<div class="icon">🏠</div>
-<h3>Residential &amp; Commercial</h3>
-<p>Home cleanouts, remodels, and yard projects — we deliver the right size dumpster right to your driveway.</p>
-</div>
-<div class="service-card">
-<div class="icon">🏗️</div>
-<h3>Construction</h3>
-<p>Heavy-duty roll-off dumpsters built to handle construction debris and job site cleanups.</p>
-</div>
-<div class="service-card">
-<div class="icon">🚛</div>
-<h3>Fast &amp; Flexible Delivery</h3>
-<p>Need a dumpster fast? We offer prompt delivery and pickup so your project stays on schedule.</p>
+
+<section class="final-cta" id="get-quote-section">
+<div class="final-cta-inner">
+<div class="final-cta-text">
+<div class="section-label">Ready to Get Started?</div>
+<h2>Two ways to book your dumpster.</h2>
+<p>Call or text us for the fastest response, or fill out the quick form and we'll follow up by email with your quote.</p>
+<div class="cta-row">
+<a class="btn-call" href="tel:8589974714">📞 Call or Text 858-997-4714</a>
+<a class="btn-quote" href="#get-quote">Get a Quote</a>
 </div>
 </div>
-<section class="services-cta">
-<h2>San Diego Dumpster Rentals</h2>
-<p>Free quotes, no obligation.</p>
-<a class="hero-btn" href="tel:8589974714">
-<span class="phone-icon">📞</span>
-      858-997-4714
-    </a>
+<div class="quote-card" id="get-quote">
+<h3>Get Your Quote</h3>
+<p class="sub">Fast, free, and no obligation. We'll follow up by email.</p>
+<form onsubmit="return submitQuote(event)">
+<div class="quote-field">
+<label>ZIP Code</label>
+<input name="zip" placeholder="Enter your ZIP code" required type="text"/>
+</div>
+<div class="quote-field">
+<label>Project Type</label>
+<select name="project">
+<option>Homeowner Cleanout</option>
+<option>Remodel</option>
+<option>Roofing</option>
+<option>Construction / Job Site</option>
+<option>Real Estate Cleanout</option>
+</select>
+</div>
+<div class="quote-field">
+<label>Dumpster Size</label>
+<select name="size">
+<option>13 Yard</option>
+<option>20 Yard</option>
+<option>Not sure yet</option>
+</select>
+</div>
+<div class="quote-field">
+<label>Preferred Delivery Date</label>
+<input name="date" type="date"/>
+</div>
+<button class="quote-submit" type="submit">Get My Quote →</button>
+</form>
+</div>
+
+</div>
 </section>
-</div>
-<!-- ══ CONTACT ══ -->
-<div class="page" id="page-contact">
-<div class="contact-page">
-<div class="section-label">Get In Touch</div>
-<h1>Let's Talk</h1>
-<p class="subtitle">The easiest way to book your dumpster is to give us a call. We'll help you pick the right size — no pressure, no obligation.</p>
-<div class="contact-card">
-<div class="sub">Call or Text</div>
-<a class="big-phone" href="tel:8589974714">858-997-4714</a>
-<div class="sub" style="margin-top:24px;margin-bottom:12px;">Email Us</div>
-<a class="big-phone contact-email" href="mailto:dave@858dumpsters.com">dave@858dumpsters.com</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+
 <footer>
-<div class="footer-logo"><img alt="858 Dumpsters" src="assets/logo.png" style="height:150px;width:auto;"/></div>
-<p>CALL OR TEXT  ·  858-997-4714</p>
+<div class="footer-logo"><img alt="858 Dumpsters" src="assets/logo.png"/></div>
+<p>CALL OR TEXT · 858-997-4714</p>
 </footer>
+
+<div class="mobile-cta-bar">
+<a class="mcb-call" href="tel:8589974714">📞 Call Now</a>
+<a class="mcb-quote" href="#get-quote">Get a Quote</a>
+</div>
+
 <script>
-  function showPage(name) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('page-' + name).classList.add('active');
-    const tabs = ['home', 'services', 'contact'];
-    document.querySelectorAll('.nav-tab')[tabs.indexOf(name)].classList.add('active');
-    window.scrollTo(0, 0);
+  function submitQuote(e) {
+    e.preventDefault();
+    var f = e.target;
+    var zip = f.zip.value, project = f.project.value, size = f.size.value, date = f.date.value;
+    var subject = encodeURIComponent('Dumpster Quote Request - ' + size);
+    var lines = [
+      'Hi 858 Dumpsters,', '',
+      "I'd like a quote for a dumpster rental:",
+      'ZIP code: ' + zip,
+      'Project type: ' + project,
+      'Dumpster size: ' + size,
+      'Preferred delivery date: ' + (date || 'Flexible'),
+      '', 'Thanks!'
+    ];
+    var body = encodeURIComponent(lines.join('\n'));
+    window.location.href = 'mailto:dave@858dumpsters.com?subject=' + subject + '&body=' + body;
+    return false;
+  }
+
+  function toggleMobileMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  function closeMobileMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
   }
 </script>
-
-
 
 </body>
 </html>
