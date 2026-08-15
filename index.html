@@ -308,14 +308,15 @@
   .areas-map #serviceAreaMap { width: 100%; height: 340px; background: #cfe0d8; }
 
   /* ── About ── */
-  .about-section { background: var(--green-bg); padding: 80px 40px; }
+  .about-section { background: #6d6c4b; padding: 80px 40px; }
   .about-inner { max-width: 900px; margin: 0 auto; text-align: center; }
   .about-inner .section-label, .about-inner .section-title { justify-content: center; display: flex; }
-  .about-inner p { color: var(--text-light); font-size: 16px; line-height: 1.85; font-weight: 300; margin: 20px auto 0; max-width: 700px; }
+  .about-inner .section-title { color: var(--cream); }
+  .about-inner p { color: rgba(240,234,214,0.8); font-size: 16px; line-height: 1.85; font-weight: 300; margin: 20px auto 0; max-width: 700px; }
   .about-badges { display: flex; justify-content: center; gap: 40px; margin-top: 36px; flex-wrap: wrap; }
   .about-badges div { text-align: center; }
   .about-badges .icon { font-size: 24px; margin-bottom: 8px; }
-  .about-badges .t { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--green-dark); font-weight: 700; }
+  .about-badges .t { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--cream); font-weight: 700; }
 
   /* ── Final CTA with quote form ── */
   .final-cta { background: #6d6c4b; padding: 80px 40px; }
@@ -650,7 +651,7 @@
   }
 
   if (document.getElementById('serviceAreaMap')) {
-    var sdBoundary = [[33.33367,-117.61054],[33.3123,-117.57153],[33.29442,-117.5496],[33.26887,-117.521],[33.24215,-117.50087],[33.21249,-117.46787],[33.17751,-117.43556],[33.07522,-117.37587],[33,-117.33997],[32.90306,-117.32328],[32.85917,-117.33966],[32.82622,-117.34213],[32.79908,-117.33447],[32.68985,-117.32094],[32.6564,-117.30924],[32.62348,-117.27694],[32.61487,-117.25201],[32.61669,-117.23353],[32.62125,-117.22332],[32.59478,-117.21411],[32.52952,-117.20505],[32.61848,-116.10619],[32.7265,-116.10567],[32.72889,-116.10315],[33.07467,-116.10325],[33.07486,-116.08115],[33.42607,-116.08509],[33.42893,-116.19774],[33.42689,-117.03089],[33.42996,-117.03085],[33.43189,-117.24136],[33.44874,-117.24151],[33.49056,-117.37081],[33.50482,-117.36418],[33.50515,-117.50975],[33.47031,-117.50909],[33.45518,-117.53879],[33.45102,-117.55961],[33.4537,-117.5785],[33.33367,-117.61054]];
+    var sdBoundary = [[33.245,-117.38],[33.2647,-116.9536],[33.0473,-116.8776],[32.8439,-116.7601],[32.5839,-117.113],[32.6915,-117.1767],[32.7265,-117.2445],[32.9595,-117.2653],[32.9919,-117.2678],[33.037,-117.292],[33.1581,-117.3506],[33.245,-117.38]];
     var map = L.map('serviceAreaMap', { scrollWheelZoom: false });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors',
