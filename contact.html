@@ -119,14 +119,7 @@
 
   /* ── Contact body ── */
   .contact-section { padding: 80px 40px; }
-  .contact-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-
-  .contact-info .info-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 28px; }
-  .contact-info .info-item .icon { width: 44px; height: 44px; border-radius: 50%; background: rgba(201,168,76,0.14); color: var(--gold); font-size: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .contact-info .info-item .label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); font-weight: 700; margin-bottom: 4px; }
-  .contact-info .info-item a { color: var(--green-dark); font-size: 17px; font-weight: 700; text-decoration: none; }
-  .contact-info .info-item a:hover { color: var(--green); }
-  .contact-info .info-item p { color: var(--text-light); font-size: 14px; line-height: 1.6; }
+  .contact-inner { max-width: 520px; margin: 0 auto; }
 
   .contact-form-card { background: #fff; border-radius: 12px; padding: 36px; box-shadow: 0 8px 40px rgba(0,0,0,0.1); }
   .contact-form-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--green-dark); margin-bottom: 4px; }
@@ -177,10 +170,6 @@
     .footer-inner { grid-template-columns: 1fr; gap: 40px; text-align: left; }
   }
 
-  @media (max-width: 900px) {
-    .contact-inner { grid-template-columns: 1fr; }
-  }
-
   @media (max-width: 700px) {
     html, body { width: 100%; overflow-x: clip; }
     nav { padding: 12px 16px; justify-content: space-between; }
@@ -227,42 +216,11 @@
 <section class="contact-header">
 <div class="section-label">Get In Touch</div>
 <h1>Let's talk about your project.</h1>
-<p>Call, text, or send a message below — we'll get back to you fast with a free quote.</p>
+<p>Call, email, or send a message below — we'll get back to you fast with a free quote.</p>
 </section>
 
 <section class="contact-section">
 <div class="contact-inner">
-<div class="contact-info">
-<div class="info-item">
-<div class="icon">📞</div>
-<div>
-<div class="label">Call or Text</div>
-<a href="tel:8589974714">858-997-4714</a>
-</div>
-</div>
-<div class="info-item">
-<div class="icon">✉️</div>
-<div>
-<div class="label">Email</div>
-<a href="mailto:dave@858dumpsters.com">dave@858dumpsters.com</a>
-</div>
-</div>
-<div class="info-item">
-<div class="icon">📍</div>
-<div>
-<div class="label">Service Area</div>
-<p>San Diego County and surrounding areas</p>
-</div>
-</div>
-<div class="info-item">
-<div class="icon">📷</div>
-<div>
-<div class="label">Instagram</div>
-<a href="https://www.instagram.com/858dumpsters/" rel="noopener" target="_blank">@858dumpsters</a>
-</div>
-</div>
-</div>
-
 <div class="contact-form-card">
 <h3>Send a Message</h3>
 <p class="sub">We'll reply by email, usually the same day.</p>
