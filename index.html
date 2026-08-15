@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="telephone=no" name="format-detection"/>
 <meta content="858 Dumpsters offers fast, affordable roll-off dumpster rentals for residential, construction, and cleanout projects." name="description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://858dumpsters.com/" property="og:url"/>
@@ -13,7 +14,7 @@
 <meta content="https://858dumpsters.com/assets/hero-dumpster.jpg" property="og:image:secure_url"/>
 <meta content="image/jpeg" property="og:image:type"/>
 <meta content="1536" property="og:image:width"/>
-<meta content="1050" property="og:image:height"/>
+<meta content="1350" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="San Diego Dumpster Rentals" name="twitter:title"/>
 <meta content="Roll-off dumpster rentals in 14 and 20 yard sizes, delivered fast for home projects, cleanouts, and construction." name="twitter:description"/>
@@ -62,8 +63,8 @@
     row-gap: 10px;
   }
 
-  .nav-logo { padding: 10px 0; display: flex; }
-  .nav-logo img { display: block; height: 68px; width: auto; }
+  .nav-logo { padding: 6px 0; display: flex; }
+  .nav-logo img { display: block; height: 92px; width: auto; }
 
   .nav-tabs { display: flex; gap: 0; }
 
@@ -346,7 +347,7 @@
   @media (max-width: 700px) {
     html, body { width: 100%; overflow-x: hidden; }
     nav { padding: 12px 16px; justify-content: space-between; }
-    .nav-logo img { height: 48px; }
+    .nav-logo img { height: 64px; }
     .nav-tabs { display: none; }
     .nav-actions { width: auto; justify-content: flex-end; gap: 10px; }
     .nav-phone.desktop-only, .nav-cta.desktop-only { display: none; }
@@ -387,7 +388,7 @@
 <div class="nav-actions">
 <a class="nav-phone desktop-only" href="tel:8589974714">858-997-4714</a>
 <a class="nav-cta desktop-only" href="tel:8589974714">Call Now</a>
-<a class="nav-cta mobile-only" href="#get-quote">Get a Quote</a>
+<a class="nav-cta mobile-only" href="tel:8589974714">Call Now</a>
 <button aria-label="Menu" class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
 </div>
 </nav>
@@ -397,7 +398,7 @@
 <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
 <a href="#areas" onclick="closeMobileMenu()">Areas We Serve</a>
 <a href="#about" onclick="closeMobileMenu()">About Us</a>
-<a href="tel:8589974714" onclick="closeMobileMenu()">📞 Call or Text 858-997-4714</a>
+<a href="tel:8589974714" onclick="closeMobileMenu()">Call 858-997-4714</a>
 </div>
 
 <section class="hero hero-split" id="top">
@@ -413,11 +414,11 @@
 <section class="sizes-section" id="sizes">
 <div class="sizes-intro">
 <div class="section-label">Choose the Right Size</div>
-<div class="section-title">Two sizes. Right for your job.</div>
+<div class="section-title">We offer multiple size dumpsters</div>
 </div>
 <div class="size-cards">
 <div class="size-card">
-<div class="size-card-photo"><img alt="858 Dumpsters 14 yard roll-off dumpster" src="assets/hero-dumpster.jpg"/></div>
+<div class="size-card-photo"><img alt="858 Dumpsters 14 yard roll-off dumpster" src="assets/dumpster-sizes.jpg"/></div>
 <h3>14 Yard Dumpster</h3>
 <p class="size-card-tagline">Great for smaller cleanouts &amp; renovations</p>
 <div class="size-stats">
@@ -429,7 +430,7 @@
 <a class="size-card-btn" href="#get-quote">Get a Quote →</a>
 </div>
 <div class="size-card">
-<div class="size-card-photo"><img alt="858 Dumpsters 20 yard roll-off dumpster" src="assets/dumpster-sizes.jpg"/></div>
+<div class="size-card-photo"><img alt="858 Dumpsters 20 yard roll-off dumpster" src="assets/hero-dumpster.jpg"/></div>
 <h3>20 Yard Dumpster</h3>
 <p class="size-card-tagline">Our most popular size for remodels &amp; construction</p>
 <div class="size-stats">
@@ -450,7 +451,7 @@
 <h2>Two ways to book your dumpster.</h2>
 <p>Call or text us for the fastest response, or fill out the quick form and we'll follow up by email with your quote.</p>
 <div class="cta-row">
-<a class="btn-call" href="tel:8589974714">📞 Call or Text 858-997-4714</a>
+<a class="nav-cta" href="tel:8589974714" style="padding:16px 34px; font-size:15px;">Call Now</a>
 <a class="btn-quote" href="#get-quote">Get a Quote</a>
 </div>
 </div>
@@ -525,8 +526,10 @@
 <div class="section-label">Proudly Serving</div>
 <div class="section-title">San Diego County and surrounding areas.</div>
 <p>From coast to inland, we deliver reliable dumpster rental service to homes and job sites across the San Diego area.</p>
-<a class="nav-cta" href="tel:8589974714" style="padding:16px 34px; font-size:15px; display:inline-flex;">Call Now</a>
+<div style="text-align:center;">
+<a class="nav-cta" href="tel:8589974714" style="padding:16px 34px; font-size:15px;">Call Now</a>
 <div style="margin-top:12px; color:rgba(240,234,214,0.85); font-size:14px;">858-997-4714</div>
+</div>
 </div>
 <div class="areas-map">
 <iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-117.35%2C32.55%2C-116.95%2C33.05&amp;layer=mapnik" title="San Diego service area map"></iframe>
@@ -566,7 +569,7 @@
 </footer>
 
 <div class="mobile-cta-bar">
-<a class="mcb-call" href="tel:8589974714">📞 Call Now</a>
+<a class="mcb-call" href="tel:8589974714">Call Now</a>
 <a class="mcb-quote" href="#get-quote">Get a Quote</a>
 </div>
 
