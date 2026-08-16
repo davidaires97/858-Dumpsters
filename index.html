@@ -19,11 +19,54 @@
 <meta content="San Diego Dumpster Rentals" name="twitter:title"/>
 <meta content="Roll-off dumpster rentals in 14 and 20 yard sizes, delivered fast for home projects, cleanouts, and construction." name="twitter:description"/>
 <meta content="https://858dumpsters.com/assets/hero-dumpster.jpg" name="twitter:image"/>
-<title>858dumpsters.com</title>
+<title>858 Dumpsters | San Diego County Dumpster Rental Company</title>
+<link href="https://858dumpsters.com/" rel="canonical"/>
 <link href="assets/favicon.png" rel="icon" sizes="192x192" type="image/png"/>
 <link href="assets/favicon.png" rel="apple-touch-icon"/>
+<link as="image" href="assets/hero-dumpster.jpg" rel="preload"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Nunito:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://858dumpsters.com/#business",
+  "name": "858 Dumpsters",
+  "image": "https://858dumpsters.com/assets/hero-dumpster.jpg",
+  "logo": "https://858dumpsters.com/assets/logo.png",
+  "url": "https://858dumpsters.com/",
+  "telephone": "+18589974714",
+  "email": "dave@858dumpsters.com",
+  "priceRange": "$450-$600",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Diego",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "San Diego County, CA"
+  },
+  "sameAs": [
+    "https://www.instagram.com/858dumpsters/"
+  ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": { "@type": "Service", "name": "14 Yard Dumpster Rental" },
+      "price": "450",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": { "@type": "Service", "name": "20 Yard Dumpster Rental" },
+      "price": "600",
+      "priceCurrency": "USD"
+    }
+  ]
+}
+</script>
 <style>
   :root {
     --green: #676647;
@@ -320,6 +363,23 @@
   .about-badges .icon { font-size: 24px; margin-bottom: 8px; }
   .about-badges .t { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--green-dark); font-weight: 700; }
 
+  /* ── FAQ ── */
+  .faq-section { background: var(--green-bg); padding: 80px 40px; }
+  .faq-intro { text-align: center; max-width: 700px; margin: 0 auto 48px; }
+  .faq-intro .section-label, .faq-intro .section-title { justify-content: center; display: flex; }
+  .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+  .faq-item { background: #fff; border-radius: 10px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); overflow: hidden; }
+  .faq-question {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 22px 26px; cursor: pointer;
+    font-weight: 700; color: var(--green-dark); font-size: 16px;
+  }
+  .faq-question .faq-icon { flex-shrink: 0; color: var(--gold); font-size: 22px; font-weight: 400; transition: transform .25s ease; line-height: 1; }
+  .faq-item.open .faq-question .faq-icon { transform: rotate(45deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+  .faq-item.open .faq-answer { max-height: 240px; }
+  .faq-answer p { color: var(--text-light); font-size: 14px; line-height: 1.75; padding: 0 26px 22px; }
+
   /* ── Final CTA with quote form ── */
   .final-cta { background: #6d6c4b; padding: 80px 40px; }
   .final-cta-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
@@ -432,6 +492,7 @@
 <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
 </div>
 
+<main>
 <section class="hero hero-split" id="top">
 <div class="hero-split-left">
 <h1>San&nbsp;Diego&nbsp;County<br/>Dumpster&nbsp;Rentals</h1>
@@ -489,7 +550,7 @@
 </div>
 <div class="size-cards">
 <div class="size-card">
-<div class="size-card-photo"><img alt="858 Dumpsters 14 yard roll-off dumpster" src="assets/dumpster-sizes.jpg"/></div>
+<div class="size-card-photo"><img alt="858 Dumpsters 14 yard roll-off dumpster" loading="lazy" src="assets/dumpster-sizes.jpg"/></div>
 <h3>14 Yard Dumpster</h3>
 <p class="size-card-tagline">Great for smaller cleanouts &amp; renovations</p>
 <div class="size-stats">
@@ -501,7 +562,7 @@
 <a class="size-card-btn" href="#get-quote">Get a Quote →</a>
 </div>
 <div class="size-card">
-<div class="size-card-photo"><img alt="858 Dumpsters 20 yard roll-off dumpster" src="assets/hero-dumpster.jpg"/></div>
+<div class="size-card-photo"><img alt="858 Dumpsters 20 yard roll-off dumpster" loading="lazy" src="assets/hero-dumpster.jpg"/></div>
 <h3>20 Yard Dumpster</h3>
 <p class="size-card-tagline">Our most popular size for remodels &amp; construction</p>
 <div class="size-stats">
@@ -633,6 +694,36 @@
 </div>
 </section>
 
+<section class="faq-section" id="faq">
+<div class="faq-intro">
+<div class="section-label">Common Questions</div>
+<div class="section-title">Frequently Asked Questions</div>
+</div>
+<div class="faq-list">
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">What's included in my dumpster rental?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><p>Delivery, pickup, and disposal are all included, along with 1 ton of weight and up to 5 days of rental time. The price we quote is the price you pay — no hidden fees.</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">How long can I keep the dumpster?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><p>Every rental includes up to 5 days. Need more time to finish your project? Just give us a call — we're happy to work with your schedule.</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">How far in advance do I need to book?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><p>We can often deliver next-day, and sometimes same-day. Booking a few days ahead helps guarantee your preferred delivery date, especially for weekends.</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">How do I prepare for delivery?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><p>Clear a flat, accessible space about the size of two parking spots — your driveway or the street both work. Just make sure there's nothing overhead, like low branches or wires.</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">What can't go in the dumpster?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><p>We can't accept hazardous materials like paint, oils, solvents, gasoline, chemicals, propane tanks, fluorescent bulbs, asbestos, tires, or batteries. Not sure about something? Just ask us.</p></div>
+</div>
+</div>
+</section>
+</main>
+
 <footer>
 <div class="footer-inner">
 <div class="footer-brand">
@@ -697,6 +788,13 @@ dave@858dumpsters.com
 
   function closeMobileMenu() {
     document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  function toggleFaq(el) {
+    var item = el.closest('.faq-item');
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+    if (!wasOpen) item.classList.add('open');
   }
 
   function selectProject(el, label) {
