@@ -189,22 +189,17 @@
     overflow: hidden;
   }
 
-  /* Split hero: dark content panel left, photo panel right */
-  .hero-split { display: grid; grid-template-columns: 1fr 1fr; background: #6d6c4b; }
-  .hero-split-left { padding: 64px 48px; display: flex; flex-direction: column; justify-content: center; }
-  .hero-split-right { position: relative; min-height: 520px; background-image: url('assets/hero-dumpster.jpg'); background-size: cover; background-position: 50% 60%; }
-  @media (max-width: 900px) {
-    .hero-split { grid-template-columns: 1fr; }
-    .hero-split-left { padding: 40px 24px; }
-    .hero-split-right { min-height: 340px; order: -1; }
+  /* Full-bleed cover hero: faded photo behind centered content */
+  .hero-cover { min-height: 640px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 110px 40px 60px; }
+  .hero-cover::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(20,24,16,0.74) 0%, rgba(20,24,16,0.58) 45%, rgba(20,24,16,0.8) 100%);
   }
-
-  /* Full-bleed hero (photo background, centered content) */
-  .hero-full { min-height: 74vh; display: flex; align-items: flex-end; padding: 0 48px 56px; }
-  .hero-full::before { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20,24,16,0.85) 0%, rgba(20,24,16,0.15) 55%, rgba(20,24,16,0.05) 100%); }
-  .hero-full-content { position: relative; z-index: 1; max-width: 640px; }
+  .hero-cover-content { position: relative; z-index: 1; max-width: 720px; }
+  .hero-cover .cta-row { justify-content: center; margin-bottom: 26px; }
+  .hero-trust { color: rgba(240,234,214,0.7); font-size: 13px; letter-spacing: .3px; }
   @media (max-width: 700px) {
-    .hero-full { min-height: 64vh; padding: 0 20px 40px; align-items: flex-end; }
+    .hero-cover { min-height: 560px; padding: 100px 20px 48px; }
   }
 
   .hero-eyebrow {
@@ -226,7 +221,7 @@
     color: rgba(240,234,214,0.85); font-weight: 300;
     margin-bottom: 28px; line-height: 1.6; max-width: 480px;
   }
-  .hero p.lead .lead-primary { display: block; font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+  .hero p.lead .lead-primary { display: block; font-size: 26px; font-weight: 700; margin-bottom: 8px; }
   .hero p.lead .lead-secondary { display: block; font-size: 14px; }
 
   .hero-call-badge {
@@ -440,7 +435,19 @@
     .footer-inner { grid-template-columns: 1fr; gap: 40px; text-align: left; }
   }
 
-  /* ── Sticky mobile call/quote bar ── */
+  /* ── Sticky call/book bar ── */
+  .sticky-cta-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 500;
+    display: flex; box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
+  }
+  .sticky-cta-bar a {
+    flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 16px 8px; font-weight: 800; font-size: 14px; letter-spacing: .3px; text-decoration: none;
+  }
+  .sticky-cta-bar .scb-call { background: var(--gold); color: var(--green-dark); }
+  .sticky-cta-bar .scb-book { background: var(--green-dark); color: var(--cream); }
+  body { padding-bottom: 58px; }
+
   @media (max-width: 900px) {
     .materials-inner, .areas-inner, .final-cta-inner { grid-template-columns: 1fr; }
   }
@@ -456,7 +463,7 @@
     .nav-hamburger { display: block; }
 
     .hero h1 { font-size: clamp(22px, 7vw, 42px); }
-    .hero p.lead .lead-primary { font-size: 17px; }
+    .hero p.lead .lead-primary { font-size: 20px; }
     .hero p.lead .lead-secondary { font-size: 13px; }
     .hero-call-badge.inline { max-width: 100%; padding: 16px 18px; }
 
@@ -481,8 +488,6 @@
 <a class="nav-tab" href="contact.html">Contact</a>
 </div>
 <div class="nav-actions">
-<a class="nav-cta desktop-only" href="tel:8589974714">858-997-4714</a>
-<a class="nav-cta mobile-only" href="tel:8589974714">858-997-4714</a>
 <button aria-label="Menu" class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
 </div>
 </nav>
@@ -497,14 +502,17 @@
 </div>
 
 <main>
-<section class="hero hero-split" id="top">
-<div class="hero-split-left">
-<h1>Project&nbsp;gets&nbsp;messy.<br/>We&nbsp;make&nbsp;cleanup&nbsp;easy.</h1>
+<section class="hero hero-cover" id="top">
+<div class="hero-cover-content">
+<div class="hero-eyebrow">Locally Owned · San Diego County</div>
+<h1>Projects&nbsp;get&nbsp;messy.<br/>We&nbsp;make&nbsp;cleanup&nbsp;easy.</h1>
 <p class="lead"><span class="lead-primary">San Diego Dumpster Rentals</span><span class="lead-secondary">Fast delivery, flat rate pricing, no hidden fees.</span></p>
-
-<a class="nav-cta" href="tel:8589974714" style="padding:16px 34px; font-size:15px; align-self:flex-start;">858-997-4714</a>
+<div class="cta-row">
+<a class="btn-call" href="#get-quote">Book Now →</a>
+<a class="btn-quote" href="tel:8589974714"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>858-997-4714</a>
 </div>
-<div class="hero-split-right"></div>
+<p class="hero-trust">Trusted by homeowners &amp; contractors across San Diego County</p>
+</div>
 </section>
 
 <section class="sizes-section" id="sizes">
@@ -547,7 +555,7 @@
 <h2>Book your dumpster below.</h2>
 <p>Call us for the fastest response or fill out the quick form and we'll reach out with your quote.</p>
 <div class="cta-row">
-<a class="nav-cta" href="tel:8589974714" style="padding:16px 34px; font-size:15px;">858-997-4714</a>
+<a class="nav-cta" href="tel:8589974714" style="padding:16px 34px; font-size:15px;">Call Now</a>
 <a class="btn-quote" href="#get-quote">Get a Quote</a>
 </div>
 </div>
@@ -623,7 +631,7 @@
 <div class="section-title">San Diego County and surrounding areas.</div>
 <p>From coast to inland, we deliver reliable dumpster rental service to homes and job sites across the San Diego area.</p>
 <div style="text-align:center;">
-<a class="nav-cta" href="tel:8589974714" style="padding:16px 34px; font-size:15px;">858-997-4714</a>
+<a class="nav-cta" href="tel:8589974714" style="padding:16px 34px; font-size:15px;">Call Now</a>
 </div>
 </div>
 <div class="areas-map">
@@ -724,6 +732,11 @@ dave@858dumpsters.com
 <p>© 858 Dumpsters. Proudly serving San Diego County.</p>
 </div>
 </footer>
+
+<div class="sticky-cta-bar">
+<a class="scb-call" href="tel:8589974714"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call Now</a>
+<a class="scb-book" href="#get-quote">Book Now</a>
+</div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
