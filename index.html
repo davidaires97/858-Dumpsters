@@ -807,18 +807,27 @@ dave@858dumpsters.com
 
   if (document.getElementById('serviceAreaMap')) {
     var sdBoundary = [[33.25,-117.38],[33.35,-117.19],[33.28,-116.94],[33.03,-116.75],[32.82,-116.72],[32.6,-116.95],[32.57,-117.12],[32.6915,-117.1767],[32.7265,-117.2445],[32.9595,-117.2653],[32.9919,-117.2678],[33.037,-117.292],[33.1581,-117.3506],[33.25,-117.38]];
-    var map = L.map('serviceAreaMap', { scrollWheelZoom: false });
+    var map = L.map('serviceAreaMap', {
+      scrollWheelZoom: false,
+      dragging: false,
+      doubleClickZoom: false,
+      touchZoom: false,
+      boxZoom: false,
+      keyboard: false,
+      zoomControl: false,
+      tap: false
+    });
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors',
       maxZoom: 19
     }).addTo(map);
     var outline = L.polygon(sdBoundary, {
-      color: '#D7263D',
+      color: '#1565C0',
       weight: 4,
-      fillColor: '#D7263D',
+      fillColor: '#1565C0',
       fillOpacity: 0.1
     }).addTo(map);
-    map.fitBounds(outline.getBounds(), { padding: [12, 12] });
+    map.fitBounds(outline.getBounds(), { padding: [-25, -25] });
   }
 </script>
 
