@@ -88,6 +88,9 @@
     transition: all 0.2s;
     white-space: nowrap;
     box-shadow: 0 2px 12px rgba(201,168,76,0.4);
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
   }
   .nav-cta:hover { background: var(--gold-light); box-shadow: 0 4px 16px rgba(201,168,76,0.55); }
   .nav-cta.mobile-only { display: none; }
@@ -225,9 +228,10 @@
       box-shadow: 0 -4px 24px rgba(0,0,0,0.35);
       border-radius: 18px 18px 0 0; overflow: hidden;
     }
-    .sticky-cta-bar a {
+    .sticky-cta-bar a, .sticky-cta-bar button {
       flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
       padding: 18px 8px; font-weight: 800; font-size: 15px; letter-spacing: .3px; text-decoration: none;
+      border: none; font-family: inherit; cursor: pointer;
     }
     .sticky-cta-bar .scb-call { background: var(--gold); color: var(--green-dark); box-shadow: inset 0 1px 0 rgba(255,255,255,0.3); }
     .sticky-cta-bar .scb-book { background: var(--green-dark); color: var(--cream); }
@@ -250,7 +254,7 @@
 <div class="nav-actions">
 <div class="header-cta-group">
 <a class="header-cta-phone" href="tel:8589974714"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>(858) 997-4714</a>
-<a class="nav-cta" href="index.html#get-quote">Book Now</a>
+<button class="nav-cta" type="button">Book Now</button>
 </div>
 <button aria-label="Menu" class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
 </div>
@@ -311,6 +315,9 @@
 <a aria-label="Instagram" href="https://www.instagram.com/858dumpsters/" rel="noopener" target="_blank">
 <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="20"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" fill="currentColor" r="0.6" stroke="none"></circle></svg>
 </a>
+<a aria-label="Facebook" href="https://www.facebook.com/858dumpsters" rel="noopener" target="_blank">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+</a>
 <a aria-label="Email" href="mailto:dave@858dumpsters.com">
 <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="20"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 7l9 6 9-6"></path></svg>
 </a>
@@ -351,10 +358,13 @@
 <div class="footer-brand-top">
 <img alt="858 Dumpsters" src="assets/logo.png"/>
 </div>
-<p class="footer-tagline">Reliable roll-off dumpster rentals for homeowners, contractors, and job sites throughout San Diego County.</p>
+<p class="footer-tagline">Your locally owned dumpster rental company, serving homeowners and contractors throughout San Diego County.</p>
 <div class="footer-social">
 <a aria-label="Instagram" class="footer-icon-btn" href="https://www.instagram.com/858dumpsters/" rel="noopener" target="_blank">
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="22"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" fill="currentColor" r="0.6" stroke="none"></circle></svg>
+</a>
+<a aria-label="Facebook" class="footer-icon-btn" href="https://www.facebook.com/858dumpsters" rel="noopener" target="_blank">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="22"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
 </a>
 <a aria-label="Email" class="footer-icon-btn" href="mailto:dave@858dumpsters.com">
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="22"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 7l9 6 9-6"></path></svg>
@@ -384,7 +394,7 @@ dave@858dumpsters.com
 
 <div class="sticky-cta-bar">
 <a class="scb-call" href="tel:8589974714"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call Now</a>
-<a class="scb-book" href="index.html#get-quote">Book Now</a>
+<button class="scb-book" type="button">Book Now</button>
 </div>
 
 <script>

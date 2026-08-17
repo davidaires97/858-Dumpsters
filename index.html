@@ -142,6 +142,9 @@
     transition: all 0.2s;
     white-space: nowrap;
     box-shadow: 0 2px 12px rgba(201,168,76,0.4);
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
   }
   .nav-cta:hover { background: var(--gold-light); box-shadow: 0 4px 16px rgba(201,168,76,0.55); }
   .nav-cta.mobile-only { display: none; }
@@ -160,6 +163,9 @@
     text-decoration: none;
     box-shadow: 0 4px 20px rgba(201,168,76,0.45);
     transition: all .2s;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
   }
   .btn-call:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201,168,76,0.6); }
   .btn-call.small { padding: 13px 26px; font-size: 13px; box-shadow: none; }
@@ -183,7 +189,7 @@
   .hero {
     background-color: #000;
     background-image: url('assets/hero-dumpster.jpg');
-    background-position: 50% 60%;
+    background-position: 50% 85%;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -194,7 +200,7 @@
   .hero-cover { min-height: 640px; display: flex; align-items: center; justify-content: flex-start; text-align: left; padding: 110px 60px 60px; }
   .hero-cover::before {
     content: ''; position: absolute; inset: 0;
-    background: linear-gradient(100deg, rgba(20,24,16,0.85) 0%, rgba(20,24,16,0.62) 42%, rgba(20,24,16,0.28) 70%, rgba(20,24,16,0.12) 100%);
+    background: linear-gradient(100deg, rgba(20,24,16,0.93) 0%, rgba(20,24,16,0.8) 42%, rgba(20,24,16,0.55) 70%, rgba(20,24,16,0.4) 100%);
   }
   .hero-cover-content { position: relative; z-index: 1; max-width: 600px; }
   .hero-cover .cta-row { justify-content: flex-start; margin-bottom: 26px; }
@@ -203,7 +209,7 @@
   @media (max-width: 700px) {
     .hero-cover { min-height: 620px; padding: 100px 20px 48px; justify-content: center; text-align: center; }
     .hero-cover::before {
-      background: linear-gradient(180deg, rgba(20,24,16,0.82) 0%, rgba(20,24,16,0.7) 45%, rgba(20,24,16,0.9) 100%);
+      background: linear-gradient(180deg, rgba(20,24,16,0.9) 0%, rgba(20,24,16,0.85) 45%, rgba(20,24,16,0.95) 100%);
     }
     .hero-cover .cta-row { justify-content: center; }
     .hero-desc { margin-left: auto; margin-right: auto; }
@@ -295,6 +301,7 @@
   .sizes-section { background: var(--green-bg); padding: 80px 40px; }
   .sizes-intro { text-align: center; max-width: 700px; margin: 0 auto 56px; }
   .sizes-intro .section-label { justify-content: center; display: flex; }
+  .sizes-intro p { color: var(--text-light); font-size: 16px; font-weight: 300; line-height: 1.6; margin-top: 14px; }
   .size-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 40px; max-width: 1100px; margin: 0 auto; }
   .size-card { background: #e8e8e3; border: 1px solid rgba(0,0,0,0.1); border-radius: 10px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
   .size-card-photo { border-radius: 8px; overflow: hidden; margin-bottom: 24px; }
@@ -306,7 +313,7 @@
   .size-stat-icon { font-size: 20px; flex-shrink: 0; }
   .size-stat strong { color: var(--green-dark); font-weight: 700; }
   .size-stat span { font-size: 14px; color: var(--text-light); }
-  .size-card-btn { display: block; text-align: center; background: var(--gold); color: var(--green-dark); padding: 16px; border-radius: 50px; font-weight: 700; font-size: 14px; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; transition: all 0.2s; box-shadow: 0 2px 12px rgba(201,168,76,0.35); }
+  .size-card-btn { display: block; width: 100%; text-align: center; background: var(--gold); color: var(--green-dark); padding: 16px; border-radius: 50px; font-weight: 700; font-size: 14px; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; transition: all 0.2s; box-shadow: 0 2px 12px rgba(201,168,76,0.35); border: none; font-family: inherit; cursor: pointer; }
   .size-card-btn:hover { background: var(--gold-light); }
 
   /* ── Quote widget (inline, in hero) ── */
@@ -321,14 +328,14 @@
   .qw-photo img { width: 100%; height: 100%; object-fit: cover; }
 
   /* ── Steps ── */
-  .steps-section { background: #6a6840; padding: 80px 40px; }
+  .steps-section { background: #6d6c4b; padding: 80px 40px; }
   .steps-section .section-label { color: var(--gold-light); justify-content: center; display: flex; }
   .steps-section .section-title { color: var(--cream); text-align: center; margin-bottom: 56px; }
-  .steps-row { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px; }
-  .step { text-align: center; }
-  .step .num { width: 46px; height: 46px; border-radius: 50%; background: var(--gold); color: var(--green-dark); font-family: 'Playfair Display', serif; font-weight: 900; font-size: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
-  .step h4 { color: var(--cream); font-size: 15px; margin-bottom: 8px; letter-spacing: .3px; }
-  .step p { color: rgba(240,234,214,0.65); font-size: 13px; line-height: 1.6; }
+  .steps-row { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
+  .step-card { border: 1px solid rgba(240,234,214,0.18); border-radius: 12px; padding: 36px 32px; background: rgba(255,255,255,0.03); }
+  .step-card .step-num { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 34px; color: var(--gold); margin-bottom: 18px; }
+  .step-card h4 { color: var(--cream); font-size: 19px; font-weight: 800; margin-bottom: 10px; letter-spacing: .3px; }
+  .step-card p { color: rgba(240,234,214,0.65); font-size: 14px; line-height: 1.7; }
 
   /* ── Materials ── */
   .materials-section { background: var(--green-bg); padding: 80px 40px; }
@@ -382,23 +389,16 @@
   .faq-item.open .faq-answer { max-height: 240px; }
   .faq-answer p { color: var(--text-light); font-size: 14px; line-height: 1.75; padding: 0 26px 22px; }
 
-  /* ── Final CTA with quote form ── */
-  .final-cta { background: #6d6c4b; padding: 80px 40px; }
-  .final-cta-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-  .final-cta-text .section-label { color: var(--gold-light); }
-  .final-cta-text h2 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: clamp(28px, 3.4vw, 40px); color: var(--cream); margin-bottom: 14px; }
-  .final-cta-text p { color: rgba(240,234,214,0.75); font-size: 15px; line-height: 1.7; margin-bottom: 24px; font-weight: 300; }
-  .final-cta-text .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
-
-  .quote-card { background: #fff; border-radius: 12px; padding: 32px; box-shadow: 0 8px 40px rgba(0,0,0,0.2); scroll-margin-top: 96px; }
-  .quote-card h3 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 20px; color: var(--green-dark); margin-bottom: 4px; }
-  .quote-card .sub { font-size: 12px; color: var(--text-light); margin-bottom: 22px; }
-  .quote-field { margin-bottom: 16px; }
-  .quote-field label { display: block; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; font-weight: 700; }
-  .quote-field input, .quote-field select { width: 100%; padding: 12px 14px; border: 1px solid rgba(0,0,0,0.15); border-radius: 6px; font-family: 'Nunito', sans-serif; font-size: 14px; color: var(--text); background: #fafaf8; }
-  .quote-field input:focus, .quote-field select:focus { outline: 2px solid var(--gold); }
-  .quote-submit { width: 100%; background: var(--gold); color: var(--green-dark); border: none; padding: 16px; border-radius: 50px; font-weight: 800; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: all .2s; box-shadow: 0 2px 12px rgba(201,168,76,0.35); }
-  .quote-submit:hover { background: var(--gold-light); }
+  /* ── Ready to Book CTA ── */
+  .ready-cta { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); padding: 80px 40px; }
+  .ready-cta-inner { max-width: 900px; margin: 0 auto; }
+  .ready-cta h2 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: clamp(28px, 3.6vw, 42px); color: var(--green-dark); line-height: 1.2; margin-bottom: 18px; }
+  .ready-cta p { color: rgba(26,26,26,0.75); font-size: 16px; line-height: 1.6; margin-bottom: 30px; max-width: 640px; }
+  .ready-cta .cta-row { gap: 16px; }
+  .ready-cta-call { display: inline-flex; align-items: center; gap: 10px; background: var(--green-dark); color: var(--cream); padding: 16px 30px; border-radius: 50px; font-weight: 800; font-size: 15px; text-decoration: none; transition: all .2s; }
+  .ready-cta-call:hover { background: #2c2b1c; }
+  .ready-cta-book { display: inline-flex; align-items: center; background: #fff; color: var(--green-dark); padding: 16px 30px; border-radius: 50px; font-weight: 800; font-size: 15px; border: none; font-family: inherit; cursor: pointer; transition: all .2s; }
+  .ready-cta-book:hover { background: #f2f2f2; }
 
   /* ── Footer ── */
   footer { background: #6d6c4b; padding: 72px 40px 48px; }
@@ -452,7 +452,7 @@
   .header-cta-phone:hover { border-color: var(--gold); color: var(--gold-light); }
 
   @media (max-width: 900px) {
-    .materials-inner, .areas-inner, .final-cta-inner { grid-template-columns: 1fr; }
+    .materials-inner, .areas-inner { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 700px) {
@@ -469,7 +469,7 @@
     .hero h1 { font-size: clamp(22px, 7vw, 42px); }
     .hero-call-badge.inline { max-width: 100%; padding: 16px 18px; }
 
-    .persona-section, .trust-row, .sizes-section, .steps-section, .materials-section, .areas-section, .about-section, .final-cta {
+    .persona-section, .trust-row, .sizes-section, .steps-section, .materials-section, .areas-section, .about-section, .ready-cta {
       padding: 56px 20px;
     }
 
@@ -478,9 +478,10 @@
       box-shadow: 0 -4px 24px rgba(0,0,0,0.35);
       border-radius: 18px 18px 0 0; overflow: hidden;
     }
-    .sticky-cta-bar a {
+    .sticky-cta-bar a, .sticky-cta-bar button {
       flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
       padding: 18px 8px; font-weight: 800; font-size: 15px; letter-spacing: .3px; text-decoration: none;
+      border: none; font-family: inherit; cursor: pointer;
     }
     .sticky-cta-bar .scb-call { background: var(--gold); color: var(--green-dark); box-shadow: inset 0 1px 0 rgba(255,255,255,0.3); }
     .sticky-cta-bar .scb-book { background: var(--green-dark); color: var(--cream); }
@@ -504,7 +505,7 @@
 <div class="nav-actions">
 <div class="header-cta-group">
 <a class="header-cta-phone" href="tel:8589974714"><svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>(858) 997-4714</a>
-<a class="nav-cta" href="#get-quote">Book Now</a>
+<button class="nav-cta" type="button">Book Now</button>
 </div>
 <button aria-label="Menu" class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
 </div>
@@ -524,9 +525,9 @@
 <div class="hero-cover-content">
 <div class="hero-eyebrow">Locally Owned · San Diego County</div>
 <h1>Projects&nbsp;get&nbsp;messy.<br/>We&nbsp;make&nbsp;cleanup&nbsp;easy.</h1>
-<p class="hero-desc">Reliable roll-off dumpster rentals for homeowners and contractors. Book online or give us a call. 858 Dumpsters is here to haul it all.</p>
+<p class="hero-desc">Dumpster rentals for homeowners and contractors. Book now or give us a call.</p>
 <div class="cta-row">
-<a class="btn-call" href="#get-quote">Book Now →</a>
+<button class="btn-call" type="button">Book Now →</button>
 <a class="btn-quote" href="tel:8589974714"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>(858) 997-4714</a>
 </div>
 <p class="hero-trust">Trusted by homeowners &amp; contractors across San Diego County</p>
@@ -536,7 +537,8 @@
 <section class="sizes-section" id="sizes">
 <div class="sizes-intro">
 <div class="section-label">Choose the Right Size</div>
-<div class="section-title">We offer multiple dumpster sizes.</div>
+<div class="section-title">The right size for your project.</div>
+<p>All rentals include delivery, pickup, and disposal. No hidden fees.</p>
 </div>
 <div class="size-cards">
 <div class="size-card">
@@ -549,7 +551,7 @@
 <div class="size-stat"><span class="size-stat-icon">⚖️</span><span><strong>Weight:</strong> 1 ton included</span></div>
 <div class="size-stat"><span class="size-stat-icon">📅</span><span><strong>Rental Days:</strong> Up to 5 days included</span></div>
 </div>
-<a class="size-card-btn" href="#get-quote">Get a Quote →</a>
+<button class="size-card-btn" type="button">Book this size →</button>
 </div>
 <div class="size-card">
 <div class="size-card-photo"><img alt="858 Dumpsters 20 yard roll-off dumpster" loading="lazy" src="assets/dumpster-sizes.jpg"/></div>
@@ -561,67 +563,18 @@
 <div class="size-stat"><span class="size-stat-icon">⚖️</span><span><strong>Weight:</strong> 1 ton included</span></div>
 <div class="size-stat"><span class="size-stat-icon">📅</span><span><strong>Rental Days:</strong> Up to 5 days included</span></div>
 </div>
-<a class="size-card-btn" href="#get-quote">Get a Quote →</a>
+<button class="size-card-btn" type="button">Book this size →</button>
 </div>
-</div>
-</section>
-
-<section class="final-cta" id="get-quote-section">
-<div class="final-cta-inner">
-<div class="final-cta-text">
-<div class="section-label">Ready to Get Started?</div>
-<h2>Book your dumpster below.</h2>
-<p>Call us for the fastest response or fill out the quick form and we'll reach out with your quote.</p>
-<div class="cta-row">
-<a class="nav-cta" href="tel:8589974714" style="padding:16px 34px; font-size:15px;">Call Now</a>
-<a class="btn-quote" href="#get-quote">Get a Quote</a>
-</div>
-</div>
-<div class="quote-card" id="get-quote">
-<h3>Get Your Quote</h3>
-<p class="sub">Fast, free, and no obligation.</p>
-<form onsubmit="return submitQuote(event)">
-<div class="quote-field">
-<label>ZIP Code</label>
-<input name="zip" placeholder="Enter your ZIP code" required type="text"/>
-</div>
-<div class="quote-field">
-<label>Project Type</label>
-<select name="project">
-<option>Homeowner Cleanout</option>
-<option>Remodel</option>
-<option>Roofing</option>
-<option>Construction / Job Site</option>
-<option>Real Estate Cleanout</option>
-</select>
-</div>
-<div class="quote-field">
-<label>Dumpster Size</label>
-<select name="size">
-<option>14 Yard</option>
-<option>20 Yard</option>
-<option>Not sure yet</option>
-</select>
-</div>
-<div class="quote-field">
-<label>Preferred Delivery Date</label>
-<input name="date" type="date"/>
-</div>
-<button class="quote-submit" type="submit">Get My Quote →</button>
-</form>
-</div>
-
 </div>
 </section>
 
 <section class="steps-section" id="how-it-works">
 <div class="section-label">How It Works</div>
-<div class="section-title">Renting a dumpster in 4 easy steps.</div>
+<div class="section-title">Renting a dumpster is easy</div>
 <div class="steps-row">
-<div class="step"><div class="num">1</div><h4>Request a Quote</h4><p>Call or fill out our quick form with your project details and location.</p></div>
-<div class="step"><div class="num">2</div><h4>We Deliver</h4><p>We'll deliver your dumpster right where you need it, on your schedule.</p></div>
-<div class="step"><div class="num">3</div><h4>You Fill It Up</h4><p>Tackle your project. We include up to 5 days with 1 ton of weight.</p></div>
-<div class="step"><div class="num">4</div><h4>We Haul It Away</h4><p>When you're done, we'll pick it up and handle the disposal responsibly.</p></div>
+<div class="step-card"><div class="step-num">1</div><h4>Pick your size</h4><p>Not sure? Call or request a quote and we'll help you choose the right size for the job.</p></div>
+<div class="step-card"><div class="step-num">2</div><h4>We deliver</h4><p>We drop your dumpster right where you need it, same day in most cases.</p></div>
+<div class="step-card"><div class="step-num">3</div><h4>We haul it away</h4><p>Fill it on your schedule. When you're done, we pick it up and dispose of it.</p></div>
 </div>
 </section>
 
@@ -637,7 +590,7 @@
 </div>
 <div class="materials-card reject">
 <h4>✕ Not Accepted</h4>
-<ul><li>Hazardous materials</li><li>Paint</li><li>Oils</li><li>Solvents</li><li>Asbestos</li><li>Tires</li><li>Batteries</li><li>Gasoline</li><li>Chemicals</li><li>Propane tanks</li><li>Fluorescent bulbs</li></ul>
+<ul><li>Hazardous materials</li><li>Paint</li><li>Oils</li><li>Asbestos</li><li>Tires</li><li>Batteries</li><li>Gasoline</li><li>Chemicals</li><li>Propane tanks</li><li>Fluorescent bulbs</li></ul>
 </div>
 </div>
 </section>
@@ -712,6 +665,17 @@
 </div>
 </div>
 </section>
+
+<section class="ready-cta">
+<div class="ready-cta-inner">
+<h2>Ready to book your<br/>dumpster?</h2>
+<p>Same-day delivery, honest pricing, and a local crew that shows up. Let's get your project rolling.</p>
+<div class="cta-row">
+<a class="ready-cta-call" href="tel:8589974714"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call (858) 997-4714</a>
+<button class="ready-cta-book" type="button">Book Now</button>
+</div>
+</div>
+</section>
 </main>
 
 <footer>
@@ -720,10 +684,13 @@
 <div class="footer-brand-top">
 <img alt="858 Dumpsters" src="assets/logo.png"/>
 </div>
-<p class="footer-tagline">Reliable roll-off dumpster rentals for homeowners, contractors, and job sites throughout San Diego County.</p>
+<p class="footer-tagline">Your locally owned dumpster rental company, serving homeowners and contractors throughout San Diego County.</p>
 <div class="footer-social">
 <a aria-label="Instagram" class="footer-icon-btn" href="https://www.instagram.com/858dumpsters/" rel="noopener" target="_blank">
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="22"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" fill="currentColor" r="0.6" stroke="none"></circle></svg>
+</a>
+<a aria-label="Facebook" class="footer-icon-btn" href="https://www.facebook.com/858dumpsters" rel="noopener" target="_blank">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="22"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
 </a>
 <a aria-label="Email" class="footer-icon-btn" href="mailto:dave@858dumpsters.com">
 <svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="22"><rect height="14" rx="2" width="18" x="3" y="5"></rect><path d="M3 7l9 6 9-6"></path></svg>
@@ -753,30 +720,11 @@ dave@858dumpsters.com
 
 <div class="sticky-cta-bar">
 <a class="scb-call" href="tel:8589974714"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call Now</a>
-<a class="scb-book" href="#get-quote">Book Now</a>
+<button class="scb-book" type="button">Book Now</button>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-  function submitQuote(e) {
-    e.preventDefault();
-    var f = e.target;
-    var zip = f.zip.value, project = f.project.value, size = f.size.value, date = f.date.value;
-    var subject = encodeURIComponent('Dumpster Quote Request - ' + size);
-    var lines = [
-      'Hi 858 Dumpsters,', '',
-      "I'd like a quote for a dumpster rental:",
-      'ZIP code: ' + zip,
-      'Project type: ' + project,
-      'Dumpster size: ' + size,
-      'Preferred delivery date: ' + (date || 'Flexible'),
-      '', 'Thanks!'
-    ];
-    var body = encodeURIComponent(lines.join('\n'));
-    window.location.href = 'mailto:dave@858dumpsters.com?subject=' + subject + '&body=' + body;
-    return false;
-  }
-
   function toggleMobileMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
   }
@@ -795,14 +743,6 @@ dave@858dumpsters.com
   function selectProject(el, label) {
     document.querySelectorAll('.persona-card').forEach(function(c){ c.classList.remove('selected'); });
     el.classList.add('selected');
-    var sel = document.querySelector('#get-quote select[name="project"]');
-    if (sel) {
-      for (var i = 0; i < sel.options.length; i++) {
-        if (sel.options[i].value === label) { sel.selectedIndex = i; break; }
-      }
-    }
-    var target = document.getElementById('get-quote');
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
   if (document.getElementById('serviceAreaMap')) {
