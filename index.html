@@ -179,9 +179,11 @@
     text-decoration: none;
     transition: all .2s;
   }
-  .btn-quote:hover { border-color: var(--gold); color: var(--gold-light); }
   .btn-quote.on-light { color: var(--green-dark); border-color: rgba(61,60,41,0.35); }
-  .btn-quote.on-light:hover { border-color: var(--green-dark); color: var(--green-dark); }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-quote:hover { border-color: var(--gold); color: var(--gold-light); }
+    .btn-quote.on-light:hover { border-color: var(--green-dark); color: var(--green-dark); }
+  }
 
   .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 
@@ -189,8 +191,8 @@
   .hero {
     background-color: #000;
     background-image: url('assets/hero-dumpster.jpg');
-    background-position: 80% 82%;
-    background-size: cover;
+    background-position: 55% 82%;
+    background-size: 112%;
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
@@ -206,8 +208,10 @@
   .hero-cover .cta-row { justify-content: flex-start; margin-bottom: 26px; }
   .hero-desc { color: rgba(240,234,214,0.85); font-weight: 300; font-size: 16px; line-height: 1.7; margin-bottom: 28px; max-width: 520px; }
   .hero-trust { color: rgba(240,234,214,0.7); font-size: 13px; letter-spacing: .3px; }
+  .hero-trust .mobile-break { display: none; }
   @media (max-width: 700px) {
-    .hero { background-position: 50% 80%; background-size: cover; }
+    .hero-trust .mobile-break { display: inline; }
+    .hero { background-position: 50% 68%; background-size: cover; }
     .hero-cover { min-height: 900px; min-height: calc(100svh - 86px); padding: 40px 20px 48px; justify-content: center; align-items: flex-start; text-align: center; }
     .hero-cover::before {
       background: linear-gradient(180deg, rgba(20,24,16,0.93) 0%, rgba(20,24,16,0.9) 45%, rgba(20,24,16,0.97) 100%);
@@ -522,7 +526,7 @@
 <button class="btn-call" type="button">Book Now</button>
 <a class="btn-quote" href="tel:8589974714"><svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>(858) 997-4714</a>
 </div>
-<p class="hero-trust">Trusted by homeowners &amp; contractors across<br/>San Diego County</p>
+<p class="hero-trust">Trusted by homeowners &amp; contractors across <br class="mobile-break"/>San Diego County</p>
 </div>
 </section>
 
@@ -562,7 +566,7 @@
 
 <section class="steps-section" id="how-it-works">
 <div class="section-label">How It Works</div>
-<div class="section-title">Renting a dumpster is easy</div>
+<div class="section-title">Renting a dumpster is easy.</div>
 <div class="steps-row">
 <div class="step-card"><div class="step-num">1</div><h4>Pick your size</h4><p>Not sure? Call or request a quote and we'll help you choose the right size for the job.</p></div>
 <div class="step-card"><div class="step-num">2</div><h4>We deliver</h4><p>We drop your dumpster right where you need it, same day in most cases.</p></div>
