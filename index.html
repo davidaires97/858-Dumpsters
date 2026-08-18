@@ -288,7 +288,7 @@
   .trust-row-item p { color: rgba(240,234,214,0.75); font-size: 13px; line-height: 1.6; }
 
   /* ── Sizes ── */
-  .sizes-section { background: var(--green-bg); padding: 80px 40px; }
+  .sizes-section { background: var(--green-bg); padding: 60px 40px 80px; }
   .sizes-intro { text-align: center; max-width: 900px; margin: 0 auto 56px; }
   .sizes-intro .section-label { justify-content: center; display: flex; }
   .sizes-intro p { color: var(--text-light); font-size: 16px; font-weight: 300; line-height: 1.6; margin-top: 14px; max-width: 700px; margin-left: auto; margin-right: auto; }
@@ -318,7 +318,7 @@
   .qw-photo img { width: 100%; height: 100%; object-fit: cover; }
 
   /* ── Steps ── */
-  .steps-section { background: #6d6c4b; padding: 80px 40px; }
+  .steps-section { background: #6d6c4b; padding: 60px 40px 80px; }
   .steps-section .section-label { color: var(--gold-light); justify-content: center; display: flex; }
   .steps-section .section-title { color: var(--cream); text-align: center; margin-bottom: 56px; }
   .steps-row { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
@@ -342,7 +342,7 @@
   .materials-card.reject li::before { content: '✕'; position: absolute; left: 0; color: #a5473a; font-weight: 700; }
 
   /* ── Areas we serve ── */
-  .areas-section { background: #6d6c4b; padding: 80px 40px; }
+  .areas-section { background: #6d6c4b; padding: 60px 40px 80px; }
   .areas-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
   .areas-text .section-label { color: var(--gold-light); }
   .areas-text .section-title { color: var(--cream); margin-bottom: 16px; }
@@ -355,7 +355,7 @@
   .areas-call-btn:hover { background: #f2f2f2; }
 
   /* ── About ── */
-  .about-section { background: #fff; padding: 80px 40px; }
+  .about-section { background: #fff; padding: 60px 40px 80px; }
   .about-inner { max-width: 900px; margin: 0 auto; text-align: center; }
   .about-inner .section-label, .about-inner .section-title { justify-content: center; display: flex; }
   .about-inner p { color: var(--text-light); font-size: 16px; line-height: 1.85; font-weight: 300; margin: 20px auto 0; max-width: 700px; }
@@ -365,7 +365,7 @@
   .about-badges .t { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--green-dark); font-weight: 700; }
 
   /* ── FAQ ── */
-  .faq-section { background: #6d6c4b; padding: 80px 40px; }
+  .faq-section { background: #6d6c4b; padding: 60px 40px 80px; }
   .faq-intro { text-align: center; max-width: 700px; margin: 0 auto 48px; }
   .faq-intro .section-label { color: var(--gold-light); }
   .faq-intro .section-title { color: var(--cream); }
@@ -380,7 +380,7 @@
   .faq-question .faq-icon { flex-shrink: 0; color: var(--gold); font-size: 22px; font-weight: 400; transition: transform .25s ease; line-height: 1; }
   .faq-item.open .faq-question .faq-icon { transform: rotate(45deg); }
   .faq-answer { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
-  .faq-item.open .faq-answer { max-height: 240px; }
+  .faq-item.open .faq-answer { max-height: 320px; }
   .faq-answer p { color: var(--text-light); font-size: 14px; line-height: 1.75; padding: 0 26px 22px; }
 
   /* ── Ready to Book CTA ── */
@@ -532,7 +532,6 @@
 
 <section class="sizes-section" id="sizes">
 <div class="sizes-intro">
-<div class="section-label">Choose the Right Size</div>
 <div class="section-title">The right size dumpster <br class="mobile-break"/>for your project.</div>
 <p>All rentals include delivery, pickup, and disposal. No hidden fees.</p>
 </div>
@@ -565,7 +564,6 @@
 </section>
 
 <section class="steps-section" id="how-it-works">
-<div class="section-label">How It Works</div>
 <div class="section-title">Renting a dumpster is easy.</div>
 <div class="steps-row">
 <div class="step-card"><div class="step-num">1</div><h4>Pick your size</h4><p>Not sure? Call or request a quote and we'll help you choose the right size for the job.</p></div>
@@ -594,7 +592,6 @@
 <section class="areas-section" id="areas">
 <div class="areas-inner">
 <div class="areas-text">
-<div class="section-label">Proudly Serving</div>
 <div class="section-title">San Diego County and surrounding areas.</div>
 <p>From coast to inland, we deliver reliable dumpster rental service to homes and job sites across the San Diego area.</p>
 <div style="text-align:center;">
@@ -609,7 +606,6 @@
 
 <section class="about-section" id="about">
 <div class="about-inner">
-<div class="section-label">About Us</div>
 <div class="section-title">Local, reliable, and ready to help.</div>
 <p>858 Dumpsters is your local dumpster rental service built on hard work and honest pricing. No hidden fees, no hassle — just show us what needs to go and we'll take care of the rest.</p>
 <div class="about-badges">
@@ -622,7 +618,6 @@
 
 <section class="faq-section" id="faq">
 <div class="faq-intro">
-<div class="section-label">Common Questions</div>
 <div class="section-title">Frequently Asked Questions</div>
 </div>
 <div class="faq-list">
@@ -631,8 +626,20 @@
 <div class="faq-answer"><p>Delivery, pickup, and disposal are all included, along with 1 ton of weight and up to 5 days of rental time. The price we quote is the price you pay — no hidden fees.</p></div>
 </div>
 <div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">What is typically included in a dumpster rental service?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><p>A dumpster rental service generally includes the delivery of the dumpster to your specified location, a set rental period for you to fill the dumpster, and the subsequent pickup and disposal of the waste.</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">How is the dumpster delivered to my residence?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><p>Dumpsters are delivered by specialized trucks that can safely place the dumpster in the desired location at your residence, typically a driveway or another designated spot.</p></div>
+</div>
+<div class="faq-item">
 <div class="faq-question" onclick="toggleFaq(this)">How long can I keep the dumpster?<span class="faq-icon">+</span></div>
 <div class="faq-answer"><p>Every rental includes up to 5 days. Need more time to finish your project? Just give us a call — we're happy to work with your schedule.</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">If I need to keep the dumpster longer than expected, how will that affect my final bill?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><p>If you require the dumpster for additional time beyond the originally planned rental period, there are two scenarios. If the dumpster needs to be emptied and then returned for further use, this will be treated as a new rental with corresponding charges.</p></div>
 </div>
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFaq(this)">How far in advance do I need to book?<span class="faq-icon">+</span></div>
@@ -641,6 +648,10 @@
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFaq(this)">How do I prepare for delivery?<span class="faq-icon">+</span></div>
 <div class="faq-answer"><p>Clear a flat, accessible space about the size of two parking spots — your driveway or the street both work. Just make sure there's nothing overhead, like low branches or wires.</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question" onclick="toggleFaq(this)">Is renting multiple dumpsters at the same time an option?<span class="faq-icon">+</span></div>
+<div class="faq-answer"><p>Absolutely, we can facilitate the rental of more than one dumpster to support your project, and we offer advice to help you identify the best approach for waste removal.</p></div>
 </div>
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFaq(this)">What can't go in the dumpster?<span class="faq-icon">+</span></div>
