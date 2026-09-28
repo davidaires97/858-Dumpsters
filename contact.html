@@ -11,7 +11,7 @@
 <meta content="https://858dumpsters.com/contact.html" property="og:url"/>
 <meta content="Contact 858 Dumpsters" property="og:title"/>
 <meta content="Call, text, or send a message for a fast, free dumpster rental quote in San Diego County." property="og:description"/>
-<meta content="https://858dumpsters.com/assets/hero-remodel.jpg" property="og:image"/>
+<meta content="https://858dumpsters.com/assets/hero-showcase.jpg" property="og:image"/>
 <title>Contact Us | 858 Dumpsters - San Diego County Dumpster Rentals</title>
 <link href="https://858dumpsters.com/contact.html" rel="canonical"/>
 <link href="assets/favicon.png?v=4" rel="icon" sizes="192x192" type="image/png"/>
@@ -257,7 +257,7 @@
 <div class="nav-actions">
 <div class="header-cta-group">
 <a class="header-cta-phone" href="tel:8589974714"><svg fill="currentColor" height="16" stroke="none" viewBox="0 0 24 24" width="16"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>(858) 997-4714</a>
-<button class="nav-cta" type="button">Book Now</button>
+<button class="nav-cta" type="button" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth',block:'center'})">Book Online</button>
 </div>
 <button aria-label="Menu" class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
 </div>
@@ -331,7 +331,7 @@
 <div class="contact-form-card">
 <h3>Send a Message</h3>
 <p class="sub">We'll reply by email, usually the same day.</p>
-<form onsubmit="return submitContact(event)">
+<form id="contact-form" onsubmit="return submitContact(event)">
 <div class="form-field">
 <label>Name</label>
 <input name="name" placeholder="Your name" required type="text"/>
@@ -397,7 +397,7 @@ dave@858dumpsters.com
 
 <div class="sticky-cta-bar">
 <a class="scb-call" href="tel:8589974714"><svg fill="#fff" height="18" stroke="none" viewBox="0 0 24 24" width="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>Call Now</a>
-<button class="scb-book" type="button">Book Now</button>
+<button class="scb-book" type="button" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth',block:'center'})">Book Online</button>
 </div>
 
 <script>

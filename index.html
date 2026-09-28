@@ -11,20 +11,20 @@
 <meta content="https://858dumpsters.com/" property="og:url"/>
 <meta content="San Diego Dumpster Rentals" property="og:title"/>
 <meta content="Your locally owned dumpster rental company, serving contractors and homeowners in San Diego County." property="og:description"/>
-<meta content="https://858dumpsters.com/assets/hero-remodel.jpg" property="og:image"/>
-<meta content="https://858dumpsters.com/assets/hero-remodel.jpg" property="og:image:secure_url"/>
+<meta content="https://858dumpsters.com/assets/hero-showcase.jpg" property="og:image"/>
+<meta content="https://858dumpsters.com/assets/hero-showcase.jpg" property="og:image:secure_url"/>
 <meta content="image/jpeg" property="og:image:type"/>
-<meta content="1536" property="og:image:width"/>
-<meta content="1024" property="og:image:height"/>
+<meta content="1672" property="og:image:width"/>
+<meta content="941" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="San Diego Dumpster Rentals" name="twitter:title"/>
 <meta content="Your locally owned dumpster rental company, serving contractors and homeowners in San Diego County." name="twitter:description"/>
-<meta content="https://858dumpsters.com/assets/hero-remodel.jpg" name="twitter:image"/>
+<meta content="https://858dumpsters.com/assets/hero-showcase.jpg" name="twitter:image"/>
 <title>858 Dumpsters | San Diego County Dumpster Rental Company</title>
 <link href="https://858dumpsters.com/" rel="canonical"/>
 <link href="assets/favicon.png?v=4" rel="icon" sizes="512x512" type="image/png"/>
 <link href="assets/favicon.png?v=4" rel="apple-touch-icon"/>
-<link as="image" href="assets/hero-remodel.jpg" rel="preload"/>
+<link as="image" href="assets/hero-showcase.jpg" rel="preload"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=Nunito:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
 <script type="application/ld+json">
@@ -33,7 +33,7 @@
   "@type": "HomeAndConstructionBusiness",
   "@id": "https://858dumpsters.com/#business",
   "name": "858 Dumpsters",
-  "image": "https://858dumpsters.com/assets/hero-remodel.jpg",
+  "image": "https://858dumpsters.com/assets/hero-showcase.jpg",
   "logo": "https://858dumpsters.com/assets/logo.png",
   "url": "https://858dumpsters.com/",
   "telephone": "+18589974714",
@@ -187,37 +187,68 @@
 
   .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 
-  /* ── HERO base ── */
+  /* ── HERO: bright showcase photo, text over the sky ── */
   .hero {
-    background-color: #000;
-    background-image: url('assets/hero-remodel.jpg');
-    background-position: 60% 55%;
+    --sky: #3283DC;
+    background-color: var(--sky);
+    background-image: url('assets/hero-showcase.jpg');
+    background-position: 50% 100%;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
   }
 
-  /* Full-bleed cover hero: faded photo behind centered content */
-  .hero-cover { min-height: 640px; display: flex; align-items: center; justify-content: flex-start; text-align: left; padding: 110px 60px 60px; }
+  .hero-cover { min-height: 640px; min-height: max(calc(100svh - 92px), 56.25vw); display: flex; align-items: flex-start; justify-content: center; text-align: center; padding: 40px 40px 60px; }
+  /* light fade at the top only, so white text reads on the sky without darkening the dumpster */
   .hero-cover::before {
     content: ''; position: absolute; inset: 0;
-    background: linear-gradient(100deg, rgba(10,18,32,0.95) 0%, rgba(10,18,32,0.85) 42%, rgba(10,18,32,0.65) 70%, rgba(10,18,32,0.5) 100%);
+    background: linear-gradient(180deg, rgba(20,55,105,0.42) 0%, rgba(20,55,105,0.22) 26%, rgba(20,55,105,0) 44%);
   }
-  .hero-cover-content { position: relative; z-index: 1; max-width: 600px; }
-  .hero-cover .cta-row { justify-content: flex-start; margin-bottom: 26px; }
-  .hero-desc { color: rgba(255,255,255,0.85); font-weight: 300; font-size: 16px; line-height: 1.7; margin-bottom: 28px; max-width: 520px; }
-  .hero-trust { color: rgba(255,255,255,0.7); font-size: 13px; letter-spacing: .3px; }
+  .hero-cover-content { position: relative; z-index: 1; max-width: 1200px; }
+  .hero h1, .hero-desc { text-shadow: 0 2px 14px rgba(10,30,60,0.45); }
+  .hero-cover .cta-row { justify-content: center; margin-bottom: 0; }
+  .hero-desc { color: #ffffff; font-weight: 400; font-size: 17px; line-height: 1.6; margin: 0 auto 22px; }
+  .hero.hero-cover h1 { font-size: clamp(28px, 2.9vw, 46px); margin-bottom: 12px; }
+  .hero .btn-call { background: #ffffff; color: #000000; box-shadow: 0 4px 18px rgba(10,30,60,0.3); }
+  .hero .btn-call:hover { background: #f2f2f2; }
+  .hero .btn-quote { background: rgba(15,40,80,0.35); border-color: rgba(255,255,255,0.85); color: #ffffff; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  /* tall tablet screens: full-width photo anchored at the bottom, sky fills the space above */
+  @media (min-width: 701px) and (max-aspect-ratio: 5/4) {
+    .hero {
+      background-image: linear-gradient(180deg, var(--sky) 0%, rgba(50,131,220,0) 30%), url('assets/hero-showcase.jpg');
+      background-size: 100% calc(61.9vw + 3px), 110% auto;
+      background-position: 0 100%, 50% 100%;
+    }
+    .hero-cover { min-height: 0; padding-bottom: calc(61.9vw * 0.74 + 24px); }
+  }
   .mobile-break { display: none; }
   @media (max-width: 700px) {
     .mobile-break { display: inline; }
-    .hero { background-position: 55% 0%; background-size: auto 118%; }
-    .hero-cover { min-height: 900px; min-height: calc(100svh - 86px); padding: 40px 20px 48px; justify-content: center; align-items: flex-start; text-align: center; }
-    .hero-cover::before {
-      background: linear-gradient(180deg, rgba(10,18,32,0.93) 0%, rgba(10,18,32,0.9) 45%, rgba(10,18,32,0.97) 100%);
+    /* phone: nav blue flows into the sky, photo anchored at the bottom, text sits above the dumpster.
+       --himg = photo height: base 120vw wide; on taller phones it grows to fill the space, but never so
+       tall that the dumpster (bottom 73% of the photo) rises above ~350px from the hero top. */
+    .hero {
+      --himg: max(67.5vw, min(calc((100% - 350px) * 1.37), 72vw));
+      background-image: linear-gradient(180deg, var(--sky) 0%, rgba(50,131,220,0) 30%), url('assets/hero-showcase.jpg');
+      background-size: 100% calc(var(--himg) + 3px), auto var(--himg);
+      background-position: 0 100%, 55% 100%;
     }
-    .hero-cover .cta-row { justify-content: center; }
-    .hero-desc { margin-left: auto; margin-right: auto; }
+    .hero-cover { min-height: calc(100svh - 86px - 76px); align-items: center; padding: 34px 20px calc(72vw * 0.74 + 12px); }
+    .hero.hero-cover h1 { font-size: clamp(22px, 7vw, 42px); margin-bottom: 20px; }
+    .hero-cover::before { background: linear-gradient(180deg, rgba(20,55,105,0.18) 0%, rgba(20,55,105,0) 40%); }
+    .hero-desc { font-size: clamp(14px, 3.95vw, 16px); margin-bottom: 20px; }
+    .hero-cover .cta-row { flex-direction: column; gap: 12px; }
+  }
+  /* short phone screens (Safari toolbars showing): tighter spacing and a slightly smaller photo so the whole dumpster clears the bottom bar */
+  @media (max-width: 700px) and (max-height: 760px) {
+    .hero { --himg: 62vw; }
+    .hero-cover { align-items: center; padding: 22px 20px calc(62vw * 0.72 + 8px); }
+    .hero.hero-cover h1 { margin-bottom: 12px; }
+    .hero-desc { margin-bottom: 16px; }
+    .hero-cover .cta-row { gap: 10px; }
+    .hero-cover .btn-call { padding: 15px 36px; }
+    .hero-cover .btn-quote { padding: 13px 32px; }
   }
 
   .hero-eyebrow {
@@ -502,7 +533,7 @@
 <div class="nav-actions">
 <div class="header-cta-group">
 <a class="header-cta-phone" href="tel:8589974714"><svg fill="currentColor" height="16" stroke="none" viewBox="0 0 24 24" width="16"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>(858) 997-4714</a>
-<button class="nav-cta" type="button">Book Now</button>
+<button class="nav-cta" type="button" onclick="location.href='contact.html'">Book Online</button>
 </div>
 <button aria-label="Menu" class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
 </div>
@@ -520,13 +551,12 @@
 <main>
 <section class="hero hero-cover" id="top">
 <div class="hero-cover-content">
-<h1>Projects&nbsp;get&nbsp;messy.<br/>We&nbsp;make&nbsp;cleanup&nbsp;easy.</h1>
-<p class="hero-desc">Dumpster rentals for contractors &amp; homeowners.<br/>Book now or give us a call.</p>
+<h1>Projects&nbsp;get&nbsp;messy. <br class="mobile-break"/>We&nbsp;make&nbsp;cleanup&nbsp;easy.</h1>
+<p class="hero-desc">Dumpster rentals for contractors &amp; homeowners. <br class="mobile-break"/>Book online or give us a call.</p>
 <div class="cta-row">
-<button class="btn-call" type="button">Book Now</button>
+<button class="btn-call" type="button" onclick="location.href='contact.html'">Book Online</button>
 <a class="btn-quote" href="tel:8589974714"><svg fill="currentColor" height="18" stroke="none" viewBox="0 0 24 24" width="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>(858) 997-4714</a>
 </div>
-<p class="hero-trust">Trusted by contractors &amp; homeowners across <br class="mobile-break"/>San Diego County</p>
 </div>
 </section>
 
@@ -666,7 +696,7 @@
 <p>Let's get your project rolling.</p>
 <div class="cta-row">
 <a class="ready-cta-call" href="tel:8589974714"><svg fill="#fff" height="18" stroke="none" viewBox="0 0 24 24" width="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>Call (858) 997-4714</a>
-<button class="ready-cta-book" type="button">Book Now</button>
+<button class="ready-cta-book" type="button" onclick="location.href='contact.html'">Book Online</button>
 </div>
 </div>
 </section>
@@ -714,7 +744,7 @@ dave@858dumpsters.com
 
 <div class="sticky-cta-bar">
 <a class="scb-call" href="tel:8589974714"><svg fill="#fff" height="18" stroke="none" viewBox="0 0 24 24" width="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>Call Now</a>
-<button class="scb-book" type="button">Book Now</button>
+<button class="scb-book" type="button" onclick="location.href='contact.html'">Book Online</button>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
