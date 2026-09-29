@@ -157,7 +157,7 @@
   }
   .follow-us-icons a:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
 
-  .contact-form-card { background: #fff; border-radius: 12px; padding: 36px; box-shadow: 0 8px 40px rgba(0,0,0,0.1); }
+  .contact-form-card { scroll-margin-top: 112px; background: #fff; border-radius: 12px; padding: 36px; box-shadow: 0 8px 40px rgba(0,0,0,0.1); }
   .contact-form-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--blue-dark); margin-bottom: 4px; }
   .contact-form-card .sub { font-size: 12px; color: var(--text-light); margin-bottom: 22px; }
   .form-field { margin-bottom: 16px; }
@@ -257,7 +257,7 @@
 <div class="nav-actions">
 <div class="header-cta-group">
 <a class="header-cta-phone" href="tel:8589974714"><svg fill="currentColor" height="16" stroke="none" viewBox="0 0 24 24" width="16"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>(858) 997-4714</a>
-<button class="nav-cta" type="button" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth',block:'center'})">Book Online</button>
+<button class="nav-cta" type="button" onclick="document.getElementById('send-message').scrollIntoView({behavior:'smooth',block:'start'})">Book Online</button>
 </div>
 <button aria-label="Menu" class="nav-hamburger" onclick="toggleMobileMenu()">☰</button>
 </div>
@@ -328,7 +328,7 @@
 </div>
 </div>
 
-<div class="contact-form-card">
+<div class="contact-form-card" id="send-message">
 <h3>Send a Message</h3>
 <p class="sub">We'll reply by email, usually the same day.</p>
 <form id="contact-form" onsubmit="return submitContact(event)">
@@ -397,7 +397,7 @@ dave@858dumpsters.com
 
 <div class="sticky-cta-bar">
 <a class="scb-call" href="tel:8589974714"><svg fill="#fff" height="18" stroke="none" viewBox="0 0 24 24" width="18"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>Call Now</a>
-<button class="scb-book" type="button" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth',block:'center'})">Book Online</button>
+<button class="scb-book" type="button" onclick="document.getElementById('send-message').scrollIntoView({behavior:'smooth',block:'start'})">Book Online</button>
 </div>
 
 <script>
@@ -425,6 +425,23 @@ dave@858dumpsters.com
   function closeMobileMenu() {
     document.getElementById('mobileMenu').classList.remove('open');
   }
+
+  // Book Online links land here with #send-message: jump straight to the message card once the page has laid out
+  (function () {
+    if (location.hash !== '#send-message') return;
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    function go() {
+      var el = document.getElementById('send-message'), root = document.documentElement;
+      if (!el) return;
+      root.style.scrollBehavior = 'auto';   // the page is set to smooth-scroll; land instantly instead
+      el.scrollIntoView({ block: 'start' });
+      root.style.scrollBehavior = '';
+    }
+    window.addEventListener('load', function () {
+      go();
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(go);
+    });
+  })();
 </script>
 
 </body>
