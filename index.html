@@ -38,7 +38,7 @@
   "url": "https://858dumpsters.com/",
   "telephone": "+18589974714",
   "email": "dave@858dumpsters.com",
-  "priceRange": "$500-$625",
+  "priceRange": "$550-$650",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "San Diego",
@@ -56,13 +56,13 @@
     {
       "@type": "Offer",
       "itemOffered": { "@type": "Service", "name": "15 Yard Dumpster Rental" },
-      "price": "500",
+      "price": "550",
       "priceCurrency": "USD"
     },
     {
       "@type": "Offer",
       "itemOffered": { "@type": "Service", "name": "20 Yard Dumpster Rental" },
-      "price": "625",
+      "price": "650",
       "priceCurrency": "USD"
     }
   ]
@@ -331,7 +331,14 @@
   .size-card-photo img { display: block; width: 100%; height: auto; aspect-ratio: 1448 / 1086; object-fit: cover; }
   .size-card h3 { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 24px; color: var(--blue-dark); margin-bottom: 6px; }
   .size-card-tagline { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 24px; font-weight: 600; }
+  .size-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; margin-bottom: 4px; }
+  .size-price .amount { font-size: 40px; font-weight: 900; color: var(--blue-dark); line-height: 1; letter-spacing: -0.5px; }
+  .size-price .tons { font-size: 18px; font-weight: 800; color: var(--blue); }
+  .size-days { font-size: 14px; color: var(--text-light); font-weight: 600; margin-bottom: 20px; }
+  @media (max-width: 700px) { .size-days .dot { display: none; } .size-days { line-height: 1.5; } }
   .size-stats { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+  .sizes-note { max-width: 760px; margin: 36px auto 0; text-align: center; font-size: 14px; line-height: 1.7; color: var(--text-light); }
+  .sizes-note strong { color: var(--blue-dark); font-weight: 700; }
   .size-stat { display: flex; align-items: center; gap: 14px; border: 1px solid rgba(0,0,0,0.15); border-radius: 6px; padding: 14px 18px; background: #fff; }
   .size-stat-icon { font-size: 20px; flex-shrink: 0; }
   .size-stat strong { color: var(--blue-dark); font-weight: 700; }
@@ -572,27 +579,30 @@
 <div class="size-card-photo"><img alt="858 Dumpsters 15 yard roll-off dumpster" loading="lazy" src="assets/dumpster-15yd.jpg"/></div>
 <h3>15 Yard Dumpster</h3>
 <p class="size-card-tagline">Garage cleanouts &amp; renovations</p>
+<div class="size-price"><span class="amount">$550</span><span class="tons">1 ton included</span></div>
+<p class="size-days">3 full days included <span class="dot">·</span> <br class="mobile-break"/>Delivery &amp; pickup days don't count</p>
 <div class="size-stats">
-<div class="size-stat"><span class="size-stat-icon">💲</span><span><strong>Price Starts At</strong> $500</span></div>
 <div class="size-stat"><span class="size-stat-icon">📐</span><span><strong>Dimensions:</strong> 12'&nbsp;L x 7.5'&nbsp;W x 5'&nbsp;H</span></div>
-<div class="size-stat"><span class="size-stat-icon">⚖️</span><span><strong>Weight:</strong> 1 ton included · $150 per extra ton</span></div>
-<div class="size-stat"><span class="size-stat-icon">📅</span><span><strong>Rental Days:</strong> Up to 5 days included · $10 per extra day</span></div>
+<div class="size-stat"><span class="size-stat-icon">⚖️</span><span><strong>Extra weight:</strong> $150 per ton</span></div>
+<div class="size-stat"><span class="size-stat-icon">📅</span><span><strong>Extra days:</strong> $15 per day</span></div>
 </div>
-<button class="size-card-btn" type="button">Book this size</button>
+<button class="size-card-btn" type="button" onclick="location.href='contact.html#send-message'">Book this size</button>
 </div>
 <div class="size-card">
 <div class="size-card-photo"><img alt="858 Dumpsters 20 yard roll-off dumpster" loading="lazy" src="assets/dumpster-20yd.jpg"/></div>
 <h3>20 Yard Dumpster</h3>
 <p class="size-card-tagline">Construction debris &amp; remodels</p>
+<div class="size-price"><span class="amount">$650</span><span class="tons">2 tons included</span></div>
+<p class="size-days">3 full days included <span class="dot">·</span> <br class="mobile-break"/>Delivery &amp; pickup days don't count</p>
 <div class="size-stats">
-<div class="size-stat"><span class="size-stat-icon">💲</span><span><strong>Price Starts At</strong> $625</span></div>
 <div class="size-stat"><span class="size-stat-icon">📐</span><span><strong>Dimensions:</strong> 12'&nbsp;L x 7.5'&nbsp;W x 6'&nbsp;H</span></div>
-<div class="size-stat"><span class="size-stat-icon">⚖️</span><span><strong>Weight:</strong> 1 ton included · $150 per extra ton</span></div>
-<div class="size-stat"><span class="size-stat-icon">📅</span><span><strong>Rental Days:</strong> Up to 5 days included · $10 per extra day</span></div>
+<div class="size-stat"><span class="size-stat-icon">⚖️</span><span><strong>Extra weight:</strong> $150 per ton</span></div>
+<div class="size-stat"><span class="size-stat-icon">📅</span><span><strong>Extra days:</strong> $15 per day</span></div>
 </div>
-<button class="size-card-btn" type="button">Book this size</button>
+<button class="size-card-btn" type="button" onclick="location.href='contact.html#send-message'">Book this size</button>
 </div>
 </div>
+<p class="sizes-note"><strong>No card fees. No fuel fees. No hidden fees.</strong> The per-ton rate covers household, cleanout, and remodel debris. Concrete, dirt, brick, and roofing are quoted separately &mdash; give us a call.</p>
 </section>
 
 <section class="steps-section" id="how-it-works">
@@ -655,7 +665,7 @@
 <div class="faq-list">
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFaq(this)">What's included in my dumpster rental?<span class="faq-icon">+</span></div>
-<div class="faq-answer"><p>Delivery, pickup, and disposal are all included, along with 1 ton of weight and up to 5 days of rental time. The price we quote is the price you pay — no hidden fees.</p></div>
+<div class="faq-answer"><p>Delivery, pickup, and disposal are all included, along with 3 full days and 1 ton of weight on the 15 yard or 2 tons on the 20 yard. The day we deliver and the day we pick up don't count toward your rental. Extra weight is $150 per ton and extra days are $15 each. The price we quote is the price you pay — no card fees, no fuel fees, no hidden fees.</p></div>
 </div>
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFaq(this)">What is typically included in a dumpster rental service?<span class="faq-icon">+</span></div>
@@ -667,7 +677,7 @@
 </div>
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFaq(this)">How long can I keep the dumpster?<span class="faq-icon">+</span></div>
-<div class="faq-answer"><p>Every rental includes up to 5 days. Need more time to finish your project? Just give us a call — we're happy to work with your schedule.</p></div>
+<div class="faq-answer"><p>Every rental includes 3 full days. The day we deliver and the day we pick up don't count toward your rental, no matter what time we arrive. Need it longer? Keep it for $15 a day — just let us know and we'll work with your schedule. Need it for more than a week? Call us for a weekly rate.</p></div>
 </div>
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFaq(this)">If I need to keep the dumpster longer than expected, how will that affect my final bill?<span class="faq-icon">+</span></div>
