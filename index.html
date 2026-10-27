@@ -1105,6 +1105,28 @@
   }
 
   a.nav-cta, a.btn-call, a.size-card-btn, a.ready-cta-book, a.scb-book { text-decoration: none; text-align: center; }
+  /* ── Review pills ── */
+  .review-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+  .review-pill { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 50px; background: var(--page-bg); border: 1px solid rgba(30,58,95,0.12); color: var(--blue-dark); text-decoration: none; transition: border-color .2s, box-shadow .2s; }
+  .review-pill:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(30,58,95,0.12); }
+  .rv-score { font-weight: 900; font-size: 17px; }
+  .rv-stars { display: inline-flex; gap: 1px; }
+  .rv-star { fill: #F5B301; }
+  .rv-src { font-weight: 700; font-size: 14px; }
+  .icon-circle .rv-star-sm { fill: currentColor; }
+  /* ── Hero review badge ── */
+  .hero-reviews { text-decoration: none; display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; padding: 8px 16px; border-radius: 50px; background: rgba(255,255,255,0.95); color: var(--blue-dark); font-size: 14px; font-weight: 700; box-shadow: 0 4px 18px rgba(10,30,60,0.22); }
+  .hr-stars { display: inline-flex; gap: 1px; }
+  .hr-stars svg { fill: #F5B301; }
+  .hero-reviews u { text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+  .hero-reviews:hover { color: var(--blue); }
+  @media (max-width: 700px) {
+    .hero-reviews { font-size: 13px; padding: 7px 14px; gap: 8px; margin-bottom: 16px; }
+    .hr-stars svg { width: 13px; height: 13px; }
+  }
+  @media (max-width: 700px) and (max-height: 760px) {
+    .hero-reviews { margin-bottom: 10px; padding: 6px 12px; }
+  }
 </style>
 </head>
 <body>
@@ -1140,6 +1162,7 @@
 <main>
 <section class="hero hero-cover" id="top">
 <div class="hero-cover-content">
+<a class="hero-reviews" href="https://g.page/r/CbcNyHyaw4K-EBI" target="_blank" rel="noopener"><span class="hr-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span><span class="hr-text">5-star reviews on <u>Google</u></span></a>
 <h1>Projects&nbsp;get&nbsp;messy. <br class="mobile-break"/>We&nbsp;make&nbsp;cleanup&nbsp;easy.</h1>
 <p class="hero-desc">Dumpster rentals for contractors &amp; homeowners. <br class="mobile-break"/>Book online or give us a call.</p>
 <div class="cta-row">
@@ -1331,6 +1354,7 @@
 
 <section class="ready-cta">
 <div class="ready-cta-inner">
+<div class="review-row"><a class="review-pill" href="https://g.page/r/CbcNyHyaw4K-EBI" target="_blank" rel="noopener"><span class="rv-stars" aria-label="5 out of 5 stars"><svg class="rv-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg class="rv-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg class="rv-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg class="rv-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg class="rv-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span><span class="rv-src">5-star reviews on Google</span></a><a class="review-pill" href="https://www.yelp.com/biz/858-dumpsters-del-mar" target="_blank" rel="noopener"><span class="rv-stars" aria-label="5 out of 5 stars"><svg class="rv-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg class="rv-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg class="rv-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg class="rv-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg class="rv-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span><span class="rv-src">5-star reviews on Yelp</span></a></div>
 <h2>Ready to book your<br/>dumpster?</h2>
 <p>Let's get your project rolling.</p>
 <div class="cta-row">
@@ -1373,6 +1397,14 @@ dave@858dumpsters.com
 <a class="footer-touch-item" href="tel:8589974714">
 <span class="icon-circle"><svg fill="currentColor" height="17" stroke="none" viewBox="0 0 24 24" width="17"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg></span>
 (858) 997-4714
+</a>
+<a class="footer-touch-item" href="https://g.page/r/CbcNyHyaw4K-EBI" target="_blank" rel="noopener">
+<span class="icon-circle"><svg class="rv-star-sm" height="15" viewBox="0 0 24 24" width="15" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+Google reviews
+</a>
+<a class="footer-touch-item" href="https://www.yelp.com/biz/858-dumpsters-del-mar" target="_blank" rel="noopener">
+<span class="icon-circle"><svg class="rv-star-sm" height="15" viewBox="0 0 24 24" width="15" fill="currentColor"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span>
+Yelp reviews
 </a>
 </div>
 </div>
