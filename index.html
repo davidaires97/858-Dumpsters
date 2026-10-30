@@ -1115,20 +1115,27 @@
   .rv-src { font-weight: 700; font-size: 14px; }
   .icon-circle .rv-star-sm { fill: currentColor; }
   /* ── Hero review badge ── */
-  .hero-reviews { text-decoration: none; display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 18px; padding: 8px 16px; border-radius: 50px; background: rgba(255,255,255,0.95); color: var(--blue-dark); font-size: 14px; font-weight: 700; box-shadow: 0 4px 18px rgba(10,30,60,0.22); }
-  .hr-stars { display: inline-flex; gap: 1px; }
-  .hr-stars svg { fill: #F5B301; }
-  .hero-reviews u { text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
-  .hero-reviews:hover { color: var(--blue); }
+  .hero-reviews { text-decoration: none; display: inline-flex; flex-direction: column; align-items: center; gap: 6px; margin-bottom: 18px; color: #ffffff; text-shadow: 0 2px 10px rgba(10,30,60,0.45); transition: opacity .2s; }
+  .hero-reviews:hover { opacity: .88; }
+  .hr-stars { display: inline-flex; gap: 2px; filter: drop-shadow(0 1px 4px rgba(10,30,60,0.35)); }
+  .hr-stars svg { width: 20px; height: 20px; fill: #FBBC05; }
+  .hr-text { font-weight: 800; font-size: 18px; letter-spacing: .2px; line-height: 1.2; }
   @media (max-width: 700px) {
-    .hero-reviews { font-size: 13px; padding: 7px 14px; gap: 8px; margin-bottom: 16px; }
-    .hr-stars svg { width: 13px; height: 13px; }
+    .hero-reviews { margin-bottom: 16px; gap: 8px; }
+    .hr-stars svg { width: 18px; height: 18px; }
+    .hr-text { font-size: 16px; }
   }
   @media (max-width: 700px) and (max-height: 760px) {
-    .hero-reviews { margin-bottom: 10px; padding: 6px 12px; }
+    .hero-reviews { margin-bottom: 10px; }
   }
-  .ready-cta p.jingle { font-family: 'Nunito', sans-serif; font-weight: 800; font-style: italic; font-size: clamp(20px, 2.2vw, 26px); color: var(--blue); margin-bottom: 30px; }
-  .footer-jingle { color: #ffffff; font-weight: 800; font-style: italic; font-size: 17px; margin: -12px 0 24px; }
+  .hr-g { width: 21px; height: 21px; flex-shrink: 0; margin-left: 4px; margin-right: -2px; filter: drop-shadow(0 1px 3px rgba(10,30,60,0.4)); }
+  @media (max-width: 700px) { .hr-g { width: 19px; height: 19px; } }
+  .hr-row { display: inline-flex; align-items: center; gap: 10px; }
+  .hr-link { font-weight: 700; font-size: 15px; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; opacity: .95; }
+  .hr-link span { text-decoration: none; display: inline-block; margin-left: 2px; font-size: 1.15em; line-height: 0; }
+  .hero-reviews:hover .hr-link { text-decoration-thickness: 2.5px; }
+  @media (max-width: 700px) { .hr-row { gap: 8px; } .hr-link { font-size: 14px; } }
+  @media (max-width: 700px) and (max-height: 760px) { .hero-reviews { gap: 3px; } }
 </style>
 </head>
 <body>
@@ -1164,7 +1171,7 @@
 <main>
 <section class="hero hero-cover" id="top">
 <div class="hero-cover-content">
-<a class="hero-reviews" href="https://maps.app.goo.gl/gAW9dqNDvwSrUbyb6" target="_blank" rel="noopener"><span class="hr-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span><span class="hr-text">5-star reviews on <u>Google</u></span></a>
+<a class="hero-reviews" href="https://maps.app.goo.gl/gAW9dqNDvwSrUbyb6" target="_blank" rel="noopener" aria-label="5.0 average rating on Google. Read our Google reviews"><span class="hr-row"><span class="hr-stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span><svg class="hr-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span class="hr-text">5.0 Average Rating</span></span><span class="hr-link">Read our Google reviews <span aria-hidden="true">&#8250;</span></span></a>
 <h1>Projects&nbsp;get&nbsp;messy. <br class="mobile-break"/>We&nbsp;make&nbsp;cleanup&nbsp;easy.</h1>
 <p class="hero-desc">Dumpster rentals for contractors &amp; homeowners. <br class="mobile-break"/>Book online or give us a call.</p>
 <div class="cta-row">
