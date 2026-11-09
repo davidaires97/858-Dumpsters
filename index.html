@@ -1200,6 +1200,19 @@
   .hero-h1 .hl-in { display: inline; }
   @media (max-width: 700px) { .hero-h1 .hl-in { display: block; } }
   @media (max-width: 700px) { .hero-cover .cta-row .btn-quote { display: none; } }
+  /* ── Phone hero spacing (more air between sections) ── */
+  @media (max-width: 700px) {
+    .hero-cover { align-items: flex-start; padding-top: clamp(24px, 4svh, 48px); }
+    .hero-cover-content .hero-tagline { margin-bottom: clamp(22px, 3.6svh, 44px); }
+    .hero-cover-content .hero-reviews { margin-bottom: clamp(22px, 3.6svh, 44px); gap: 8px; }
+    .hero.hero-cover h1.hero-h1 { margin-bottom: clamp(26px, 4.2svh, 50px); }
+  }
+  @media (max-width: 700px) and (max-height: 760px) {
+    .hero-cover { padding-top: 18px; }
+    .hero-cover-content .hero-tagline { margin-bottom: 18px; }
+    .hero-cover-content .hero-reviews { margin-bottom: 18px; gap: 5px; }
+    .hero.hero-cover h1.hero-h1 { margin-bottom: 22px; }
+  }
 </style>
 </head>
 <body>
