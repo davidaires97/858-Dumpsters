@@ -1215,6 +1215,49 @@
   }
   .hero-reviews .hr-text u { text-decoration-thickness: 2px; text-underline-offset: 4px; }
   .hero-reviews .hr-arrow { display: inline-block; margin-left: 5px; font-size: 1.15em; line-height: 1; }
+  /* ── Reviews carousel ── */
+  .reviews-section { background: #ffffff; padding: 64px 0 64px; }
+  .reviews-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+  .reviews-inner .section-title { justify-content: center; display: flex; padding: 0 20px; }
+  .rvc-summary { display: inline-flex; align-items: center; gap: 8px; margin: 12px 0 28px; color: var(--blue-dark); font-weight: 800; font-size: 17px; text-decoration: none; }
+  .rvc-summary .rvc-g { width: 20px; height: 20px; }
+  .rvc-sum-stars { display: inline-flex; gap: 1px; }
+  .rvc-sum-stars svg { width: 17px; height: 17px; fill: #F5B301; }
+  .rvc-sum-txt { font-weight: 700; color: var(--text-light); }
+  .rvc-track { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 40px; padding: 6px 40px 18px; scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+  .rvc-track::-webkit-scrollbar { display: none; }
+  .rvc-track:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+  .rvc-card { flex: 0 0 340px; scroll-snap-align: start; background: var(--page-bg); border: 1px solid rgba(30,58,95,0.10); border-radius: 16px; padding: 24px 24px 20px; text-align: left; display: flex; flex-direction: column; box-shadow: 0 6px 22px rgba(30,58,95,0.08); }
+  .rvc-stars { display: flex; gap: 2px; margin-bottom: 12px; }
+  .rvc-stars svg { width: 18px; height: 18px; fill: #F5B301; }
+  .rvc-quote { color: var(--text); font-size: 15.5px; line-height: 1.6; margin: 0 0 18px; flex: 1; }
+  .rvc-foot { display: flex; align-items: center; gap: 8px; }
+  .rvc-name { font-weight: 800; color: var(--blue-dark); font-size: 15px; margin-right: auto; }
+  .rvc-foot .rvc-g { width: 16px; height: 16px; }
+  .rvc-src { font-size: 13px; color: var(--text-light); font-weight: 600; }
+  .rvc-dots { display: flex; justify-content: center; gap: 8px; margin: 6px 0 22px; }
+  .rvc-dots span { width: 8px; height: 8px; border-radius: 50%; background: rgba(30,58,95,0.2); transition: background .25s, width .25s; }
+  .rvc-dots span.on { background: var(--blue); width: 22px; border-radius: 6px; }
+  .rvc-all { color: var(--blue); font-weight: 800; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; font-size: 15px; }
+  @media (min-width: 1100px) { .rvc-track { justify-content: flex-start; } }
+  @media (max-width: 700px) {
+    .reviews-section { padding: 52px 0 52px; }
+    .rvc-track { gap: 14px; padding: 6px 20px 16px; scroll-padding: 0 20px; }
+    .rvc-card { flex-basis: 84%; padding: 22px 20px 18px; }
+    .rvc-quote { font-size: 15px; }
+  }
+  /* ── Reviews carousel: compact, directly under hero ── */
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .reviews-section { background: var(--page-bg); padding: 34px 0 40px; }
+  .rvc-summary { margin: 0 0 16px; }
+  .rvc-card { background: #ffffff; flex-basis: 300px; padding: 18px 20px 16px; }
+  .rvc-quote { font-size: 14px; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  .rvc-all { font-size: 14px; }
+  @media (max-width: 700px) {
+    .reviews-section { padding: 26px 0 30px; }
+    .rvc-card { flex-basis: 78%; padding: 16px 16px 14px; }
+    .rvc-quote { font-size: 14px; }
+  }
 </style>
 </head>
 <body>
@@ -1259,6 +1302,38 @@
 </div>
 </div>
 </section>
+
+<section class="reviews-section" id="reviews" aria-label="Customer reviews">
+<div class="reviews-inner">
+<h2 class="sr-only">What customers are saying</h2>
+<a class="rvc-summary" href="https://maps.app.goo.gl/gAW9dqNDvwSrUbyb6" target="_blank" rel="noopener"><svg class="rvc-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span>5.0</span><span class="rvc-sum-stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span><span class="rvc-sum-txt">on Google</span></a>
+<div class="rvc-track" id="rvcTrack" tabindex="0">
+<article class="rvc-card">
+<div class="rvc-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></div>
+<p class="rvc-quote">&ldquo;Dave is organized and efficient; he delivers a dumpster on site and then picks it up to haul it away. His prices are very reasonable and he is an exceptional communicator.&rdquo;</p>
+<div class="rvc-foot"><span class="rvc-name">Jarrod G.</span><svg class="rvc-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span class="rvc-src">Google review</span></div>
+</article>
+<article class="rvc-card">
+<div class="rvc-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></div>
+<p class="rvc-quote">&ldquo;I had absolutely no idea renting a dumpster would be so much more affordable than hiring a local junk removal company. It was less than half the price of what multiple junk removal companies were quoting. They placed the dumpster safely on my driveway&#8230;&rdquo;</p>
+<div class="rvc-foot"><span class="rvc-name">Maya A.</span><svg class="rvc-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span class="rvc-src">Google review</span></div>
+</article>
+<article class="rvc-card">
+<div class="rvc-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></div>
+<p class="rvc-quote">&ldquo;Really satisfied with my dumpster rental experience. 858 dumpsters makes it so easy with their online booking. I went online and requested a second dumpster and Dave was able to drop an empty one off and pick up my full one at the same time.&rdquo;</p>
+<div class="rvc-foot"><span class="rvc-name">Bryce P.</span><svg class="rvc-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span class="rvc-src">Google review</span></div>
+</article>
+<article class="rvc-card">
+<div class="rvc-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></div>
+<p class="rvc-quote">&ldquo;I&#8217;m a general contractor in San Diego and a huge fan of the service 858 Dumpsters provides. Dave showed up with a 20 yard bin and hauled away my construction debris&#8230; Easy online booking 24/7.&rdquo;</p>
+<div class="rvc-foot"><span class="rvc-name">Alex P.</span><svg class="rvc-g" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span class="rvc-src">Google review</span></div>
+</article>
+</div>
+<div class="rvc-dots" id="rvcDots" aria-hidden="true"></div>
+<a class="rvc-all" href="https://maps.app.goo.gl/gAW9dqNDvwSrUbyb6" target="_blank" rel="noopener">See all reviews on Google <span aria-hidden="true">&#8250;</span></a>
+</div>
+</section>
+
 
 <section class="sizes-section" id="sizes">
 <div class="sizes-intro">
@@ -1561,5 +1636,29 @@ Yelp reviews
   }
 </script>
 
+<script>
+/* Reviews carousel: auto-advances, pauses while the visitor touches/hovers, swipeable */
+(function(){
+  var track=document.getElementById('rvcTrack'); if(!track) return;
+  var cards=[].slice.call(track.querySelectorAll('.rvc-card')), dots=document.getElementById('rvcDots');
+  cards.forEach(function(){ dots.appendChild(document.createElement('span')); });
+  var dotEls=[].slice.call(dots.children), idx=0, pausedUntil=0, visible=false;
+  function cur(){ var x=track.scrollLeft, o=cards[0].offsetLeft, best=0, d=1e9; cards.forEach(function(c,i){ var dd=Math.abs((c.offsetLeft-o)-x); if(dd<d){d=dd;best=i;} }); return best; }
+  function paint(){ idx=cur(); dotEls.forEach(function(s,i){ s.className = i===idx?'on':''; }); }
+  function go(i){ var c=cards[i]; if(!c) return; track.scrollTo({left: c.offsetLeft - cards[0].offsetLeft, behavior:'smooth'}); }
+  function pause(ms){ pausedUntil=Date.now()+(ms||7000); }
+  ['pointerdown','touchstart','wheel','focusin'].forEach(function(e){ track.addEventListener(e,function(){pause(8000);},{passive:true}); });
+  track.addEventListener('mouseenter',function(){pause(600000);}); track.addEventListener('mouseleave',function(){pause(2500);});
+  track.addEventListener('scroll',function(){ window.requestAnimationFrame(paint); },{passive:true});
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ visible=es[0].isIntersecting; },{threshold:0.3}).observe(track); } else { visible=true; }
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  paint();
+  if(!reduce) setInterval(function(){
+    if(!visible || Date.now()<pausedUntil || document.hidden) return;
+    var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    go(atEnd ? 0 : Math.min(cur()+1, cards.length-1));
+  }, 4500);
+})();
+</script>
 </body>
 </html>
