@@ -1258,6 +1258,29 @@
     .rvc-card { flex-basis: 78%; padding: 16px 16px 14px; }
     .rvc-quote { font-size: 14px; }
   }
+  /* ── Instagram grid ── */
+  .ig-section { background: #ffffff; padding: 40px 20px 48px; }
+  .ig-inner { max-width: 1100px; margin: 0 auto; }
+  .ig-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+  .ig-handle { display: inline-flex; align-items: center; gap: 10px; color: var(--blue-dark); font-weight: 800; font-size: 18px; text-decoration: none; }
+  .ig-icon { width: 26px; height: 26px; color: #E1306C; }
+  .ig-follow { background: var(--blue); color: #fff; font-weight: 800; font-size: 14px; padding: 9px 22px; border-radius: 50px; text-decoration: none; transition: background .2s; }
+  .ig-follow:hover { background: var(--blue-light); }
+  .ig-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  @media (max-width: 900px) { .ig-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; } }
+  .ig-tile { display: block; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 10px; background: var(--page-bg); }
+  .ig-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s; }
+  .ig-tile:hover img { transform: scale(1.04); }
+  @media (max-width: 700px) {
+    .ig-section { padding: 30px 12px 36px; }
+    .ig-head { padding: 0 4px; margin-bottom: 12px; }
+    .ig-handle { font-size: 16px; }
+    .ig-icon { width: 22px; height: 22px; }
+    .ig-grid { gap: 4px; }
+    .ig-tile { border-radius: 6px; }
+  }
+  .ig-handle .ig-word { font-weight: 800; }
+  .ig-handle .ig-at { font-weight: 600; font-size: .85em; color: var(--text-light); }
 </style>
 </head>
 <body>
@@ -1334,6 +1357,23 @@
 </div>
 </section>
 
+
+<section class="ig-section" id="instagram" aria-label="Instagram">
+<div class="ig-inner">
+<div class="ig-head">
+<a class="ig-handle" href="https://www.instagram.com/858dumpsters/" target="_blank" rel="noopener"><svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none"/></svg><span class="ig-word">Instagram</span><span class="ig-at">@858dumpsters</span></a>
+<a class="ig-follow" href="https://www.instagram.com/858dumpsters/" target="_blank" rel="noopener">Follow</a>
+</div>
+<div class="ig-grid">
+<a class="ig-tile" href="https://www.instagram.com/858dumpsters/p/DeuV9M4Eclk/" target="_blank" rel="noopener"><img src="assets/ig/ig-1.jpg" alt="Dave with an 858 Dumpsters roll-off bin" loading="lazy" width="480" height="640"/></a>
+<a class="ig-tile" href="https://www.instagram.com/858dumpsters/p/De3AY8zxmqH/" target="_blank" rel="noopener"><img src="assets/ig/ig-2.jpg" alt="Dave with the 858 Dumpsters truck" loading="lazy" width="480" height="640"/></a>
+<a class="ig-tile" href="https://www.instagram.com/858dumpsters/p/DfZ-6vQm4Wt/" target="_blank" rel="noopener"><img src="assets/ig/ig-3.jpg" alt="858 Dumpsters bin dropped in a driveway" loading="lazy" width="480" height="640"/></a>
+<a class="ig-tile" href="https://www.instagram.com/858dumpsters/p/DfNobmRkmEG/" target="_blank" rel="noopener"><img src="assets/ig/ig-4.jpg" alt="858 Dumpsters bin on a job site" loading="lazy" width="480" height="640"/></a>
+<a class="ig-tile" href="https://www.instagram.com/858dumpsters/p/De26TgliYmt/" target="_blank" rel="noopener"><img src="assets/ig/ig-5.jpg" alt="858 Dumpsters truck unloading a bin" loading="lazy" width="480" height="640"/></a>
+<a class="ig-tile" href="https://www.instagram.com/858dumpsters/p/De0Hz0BGXux/" target="_blank" rel="noopener"><img src="assets/ig/ig-6.jpg" alt="858 Dumpsters bin ready for delivery" loading="lazy" width="480" height="640"/></a>
+</div>
+</div>
+</section>
 
 <section class="sizes-section" id="sizes">
 <div class="sizes-intro">
