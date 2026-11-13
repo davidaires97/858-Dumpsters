@@ -1,0 +1,5 @@
+# Send the old domain to the main one (permanent redirect, keeps the page path)
+https://858hauling.com/*      https://858dumpsters.com/:splat   301!
+http://858hauling.com/*       https://858dumpsters.com/:splat   301!
+https://www.858hauling.com/*  https://858dumpsters.com/:splat   301!
+http://www.858hauling.com/*   https://858dumpsters.com/:splat   301!
